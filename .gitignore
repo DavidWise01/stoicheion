@@ -1,0 +1,11 @@
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editors
+.vscode/
+*.swp
+
+# Windows
+New Text Document.txt
