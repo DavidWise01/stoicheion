@@ -1,0 +1,1039 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="STOICHEION — Unified Elements Framework. 5×5×5 Kosmos lattice, 22 Nomoi axioms, 256 Arithmos register, TRIPOD pipeline, Kybernetes router.">
+<title>STOICHEION · The Elements System</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:100%;height:100%;overflow:hidden;background:#03050a;
+  color:#c8d4e0;font-family:'JetBrains Mono',monospace}
+
+/* ── Header ──────────────────────────────────────── */
+#topbar{
+  position:fixed;top:0;left:0;right:0;height:52px;z-index:40;
+  background:rgba(3,5,10,.96);border-bottom:1px solid rgba(255,255,255,.06);
+  display:flex;align-items:center;gap:0;padding:0 20px;
+  backdrop-filter:blur(16px);
+}
+.tb-brand{display:flex;flex-direction:column;margin-right:24px}
+.tb-name{font-size:16px;font-weight:700;letter-spacing:.14em;
+  background:linear-gradient(90deg,#c4a35a,#e8d080,#8fc7ff);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.tb-sub{font-size:9px;letter-spacing:.22em;color:#2e3848;text-transform:uppercase}
+.tb-divider{width:1px;height:28px;background:rgba(255,255,255,.08);margin:0 16px}
+
+/* Mode tabs */
+.mode-tabs{display:flex;gap:4px}
+.mode-tab{
+  display:flex;align-items:center;gap:7px;padding:6px 14px;border-radius:8px;
+  border:1px solid rgba(255,255,255,.06);background:rgba(255,255,255,.03);
+  color:#3e4a5a;cursor:pointer;font-family:'JetBrains Mono',monospace;
+  font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+  transition:all .18s;
+}
+.mode-tab:hover{border-color:rgba(196,163,90,.3);color:#c4a35a88}
+.mode-tab.active{border-color:#c4a35a;color:#c4a35a;background:rgba(196,163,90,.1);
+  box-shadow:0 0 16px rgba(196,163,90,.2)}
+.mode-dot{width:6px;height:6px;border-radius:50%}
+
+/* Top-right metrics */
+.tb-metrics{margin-left:auto;display:flex;gap:20px;align-items:center}
+.tb-metric{text-align:right}
+.tb-metric .val{font-size:13px;font-weight:700}
+.tb-metric .lbl{font-size:8px;color:#2e3848;letter-spacing:.18em;text-transform:uppercase}
+
+/* ── Layout ──────────────────────────────────────── */
+#app{position:fixed;inset:52px 0 0 0;display:grid;
+  grid-template-columns:320px 1fr 340px}
+#canvas-wrap{position:relative;overflow:hidden}
+canvas#c{display:block;width:100%;height:100%}
+
+/* ── Panels ──────────────────────────────────────── */
+.panel{
+  padding:14px 12px;display:flex;flex-direction:column;gap:10px;
+  overflow-y:auto;background:rgba(3,5,10,.92);
+  border-right:1px solid rgba(255,255,255,.05);
+}
+.panel.right{border-right:none;border-left:1px solid rgba(255,255,255,.05)}
+.panel::-webkit-scrollbar{width:3px}
+.panel::-webkit-scrollbar-thumb{background:#1a2030}
+
+.blk{border:1px solid rgba(255,255,255,.06);border-radius:12px;
+  padding:12px 13px;background:rgba(8,12,22,.7);transition:border-color .2s}
+.blk:hover{border-color:rgba(255,255,255,.1)}
+.blk-title{font-size:8px;letter-spacing:.22em;text-transform:uppercase;
+  color:#2e3848;margin-bottom:8px;display:flex;align-items:center;gap:6px}
+.blk-title .g{font-size:12px;font-weight:700;letter-spacing:.08em}
+.sep{height:1px;background:rgba(255,255,255,.05);margin:8px 0}
+
+/* Metric rows */
+.mrow{display:flex;justify-content:space-between;align-items:center;
+  padding:4px 0;font-size:11px;border-bottom:1px solid rgba(255,255,255,.04)}
+.mrow:last-child{border-bottom:none}
+.mk{color:#2e3848;letter-spacing:.08em;font-size:10px}
+.mv{font-weight:700;font-size:12px}
+
+/* Bars */
+.bwrap{margin:5px 0}
+.blbl{font-size:8px;color:#2e3848;letter-spacing:.14em;text-transform:uppercase;margin-bottom:3px}
+.btrack{height:4px;background:#0e141e;border-radius:2px;overflow:hidden}
+.bfill{height:100%;border-radius:2px;transition:width .5s ease}
+
+/* Foundation color palette */
+.c-root0   {color:#ffd700}
+.c-ethos   {color:#8fc7ff}
+.c-logos   {color:#5ac4aa}
+.c-pathos  {color:#e8915a}
+.c-mythos  {color:#d66cff}
+.c-human   {color:#e8e8e8}
+.c-gold    {color:#c4a35a}
+.c-dim     {color:#3e4a5a}
+
+/* ── Axiom card ──────────────────────────────────── */
+.axiom-card{
+  border:1px solid rgba(255,255,255,.06);border-radius:10px;
+  padding:10px 12px;background:rgba(255,255,255,.02);cursor:pointer;
+  transition:all .15s;margin-bottom:6px;
+}
+.axiom-card:hover{border-color:rgba(196,163,90,.3);background:rgba(196,163,90,.04)}
+.axiom-card.active{border-color:#c4a35a;background:rgba(196,163,90,.08)}
+.ax-id  {font-size:9px;color:#2e3848;margin-bottom:2px}
+.ax-name{font-size:13px;font-weight:700;letter-spacing:.06em}
+.ax-greek{font-size:11px;color:#5a6a7a;margin-top:1px}
+.ax-desc{font-size:10px;color:#3e4a5a;margin-top:4px;line-height:1.55}
+.ax-tags{display:flex;gap:4px;margin-top:6px;flex-wrap:wrap}
+.ax-tag{font-size:9px;padding:2px 7px;border-radius:4px;border:1px solid rgba(255,255,255,.08);
+  color:#2e3848;letter-spacing:.06em}
+
+/* ── Router display ──────────────────────────────── */
+.route-box{
+  border-radius:10px;padding:14px;border:1px solid;text-align:center;
+  transition:all .4s;margin-bottom:8px;
+}
+.route-name{font-size:20px;font-weight:700;letter-spacing:.1em}
+.route-desc{font-size:10px;margin-top:5px;opacity:.7}
+
+/* ── Pipeline stages ─────────────────────────────── */
+.pipeline{display:flex;flex-direction:column;gap:6px}
+.stage{
+  display:flex;align-items:center;gap:10px;padding:8px 11px;
+  border:1px solid rgba(255,255,255,.05);border-radius:9px;
+  background:rgba(255,255,255,.02);transition:all .3s;
+}
+.stage.active{border-color:#c4a35a;background:rgba(196,163,90,.08)}
+.stage.done  {border-color:rgba(90,196,170,.3);background:rgba(90,196,170,.04)}
+.s-dot{width:7px;height:7px;border-radius:50%;background:#1a2030;
+  flex-shrink:0;transition:all .3s}
+.stage.active .s-dot{background:#c4a35a;box-shadow:0 0 8px #c4a35a}
+.stage.done   .s-dot{background:#5ac4aa;box-shadow:0 0 8px #5ac4aa}
+.s-name{font-size:10px;font-weight:700;letter-spacing:.08em;flex:1}
+.s-greek{font-size:9px;color:#2e3848}
+.s-status{font-size:9px;color:#2e3848}
+.stage.active .s-status{color:#c4a35a}
+.stage.done   .s-status{color:#5ac4aa}
+
+/* ── 256 register grid ───────────────────────────── */
+#register-grid{
+  display:grid;grid-template-columns:repeat(16,1fr);gap:2px;
+  margin-top:8px;
+}
+.reg-cell{
+  aspect-ratio:1;border-radius:2px;cursor:pointer;
+  transition:transform .1s,opacity .2s;opacity:.6;
+}
+.reg-cell:hover{transform:scale(1.4);opacity:1;z-index:10;position:relative}
+.reg-cell.sel{transform:scale(1.6);opacity:1;z-index:11;position:relative;
+  box-shadow:0 0 8px currentColor}
+
+/* ── Flay input ──────────────────────────────────── */
+.flay-input{
+  width:100%;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);
+  border-radius:9px;color:#c8d4e0;font-family:'JetBrains Mono',monospace;
+  font-size:12px;padding:10px 12px;outline:none;resize:none;
+  transition:border-color .2s;
+}
+.flay-input:focus{border-color:rgba(196,163,90,.35)}
+.flay-input::placeholder{color:#1e2830}
+.flay-btn{
+  width:100%;font-family:'JetBrains Mono',monospace;font-weight:700;
+  font-size:12px;letter-spacing:.1em;text-transform:uppercase;border-radius:9px;
+  border:1px solid rgba(196,163,90,.4);background:rgba(196,163,90,.12);
+  color:#c4a35a;padding:10px;cursor:pointer;transition:all .2s;margin-top:6px;
+}
+.flay-btn:hover{background:rgba(196,163,90,.22)}
+
+/* ── Log entries ─────────────────────────────────── */
+.log-scroll{max-height:220px;overflow-y:auto}
+.log-scroll::-webkit-scrollbar{width:3px}
+.log-scroll::-webkit-scrollbar-thumb{background:#1a2030}
+.log-entry{font-size:10px;padding:5px 0;border-bottom:1px solid rgba(255,255,255,.04);
+  color:#2e3848;line-height:1.55}
+.log-entry:last-child{border-bottom:none}
+.log-ts{color:#1e2830;margin-right:6px}
+
+/* ── Elenchus audit ──────────────────────────────── */
+.audit-bar-row{display:flex;align-items:center;gap:8px;margin-bottom:5px}
+.audit-lbl{font-size:10px;width:120px;color:#3e4a5a;flex-shrink:0;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.audit-track{flex:1;height:5px;background:#0e141e;border-radius:3px;overflow:hidden}
+.audit-fill{height:100%;border-radius:3px;transition:width .5s}
+.audit-val{font-size:10px;font-weight:700;width:36px;text-align:right;flex-shrink:0}
+
+/* ── Canvas overlay label ────────────────────────── */
+#canvas-label{
+  position:absolute;bottom:20px;left:50%;transform:translateX(-50%);
+  pointer-events:none;font-size:10px;color:rgba(255,255,255,.25);
+  letter-spacing:.14em;text-transform:uppercase;text-align:center;
+}
+#canvas-mode-badge{
+  position:absolute;top:14px;right:14px;
+  padding:5px 12px;border-radius:6px;border:1px solid rgba(196,163,90,.25);
+  background:rgba(196,163,90,.06);color:#c4a35a;font-size:10px;
+  font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  pointer-events:none;
+}
+
+@media(max-width:1100px){
+  #app{grid-template-columns:280px 1fr 0}
+  .panel.right{display:none}
+}
+@media(max-width:780px){
+  #app{grid-template-columns:0 1fr 0}
+  .panel.left,.panel.right{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ TOPBAR ═══ -->
+<div id="topbar">
+  <div class="tb-brand">
+    <div class="tb-name">STOICHEION</div>
+    <div class="tb-sub">The Elements System · v1.0</div>
+  </div>
+  <div class="tb-divider"></div>
+  <div class="mode-tabs">
+    <div class="mode-tab active" id="tab-kosmos" onclick="setMode('kosmos')">
+      <div class="mode-dot" style="background:#c4a35a"></div>KOSMOS
+    </div>
+    <div class="mode-tab" id="tab-kybernetes" onclick="setMode('kybernetes')">
+      <div class="mode-dot" style="background:#5ac4aa"></div>KYBERNETES
+    </div>
+    <div class="mode-tab" id="tab-arithmos" onclick="setMode('arithmos')">
+      <div class="mode-dot" style="background:#8fc7ff"></div>ARITHMOS
+    </div>
+    <div class="mode-tab" id="tab-elenchus" onclick="setMode('elenchus')">
+      <div class="mode-dot" style="background:#d66cff"></div>ELENCHUS
+    </div>
+  </div>
+  <div class="tb-metrics">
+    <div class="tb-metric">
+      <div class="val c-gold" id="m-axioms">22</div>
+      <div class="lbl">NOMOI</div>
+    </div>
+    <div class="tb-metric">
+      <div class="val c-ethos" id="m-register">256</div>
+      <div class="lbl">ARITHMOS</div>
+    </div>
+    <div class="tb-metric">
+      <div class="val c-logos" id="m-truth">5×5×5</div>
+      <div class="lbl">KOSMOS</div>
+    </div>
+    <div class="tb-metric">
+      <div class="val" id="m-route" style="color:#5ac4aa">ALLOW</div>
+      <div class="lbl">KYBERNETES</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ APP ═══ -->
+<div id="app">
+
+<!-- ── LEFT PANEL ── -->
+<div class="panel left" id="leftPanel">
+
+  <!-- KOSMOS mode: axiom list -->
+  <div id="lp-kosmos">
+    <div class="blk">
+      <div class="blk-title"><span class="g c-gold">NOMOI</span> · 22 Axioms</div>
+      <div id="axiomList"></div>
+    </div>
+  </div>
+
+  <!-- KYBERNETES mode: flay input + route -->
+  <div id="lp-kybernetes" style="display:none">
+    <div class="blk">
+      <div class="blk-title"><span class="g c-logos">KYBERNETES</span> · Router</div>
+      <textarea class="flay-input" id="flayInput" rows="4"
+        placeholder="Enter any claim, text, or system description to route through STOICHEION…"></textarea>
+      <button class="flay-btn" onclick="runFlay()">⬥ FLAY TARGET</button>
+      <div class="sep"></div>
+      <div class="blk-title">Sample Targets</div>
+      <div id="sampleChips" style="display:flex;flex-wrap:wrap;gap:5px"></div>
+    </div>
+    <div class="blk" id="routeResultBlk" style="display:none">
+      <div class="blk-title"><span class="g c-logos">ROUTE</span> · Verdict</div>
+      <div class="route-box" id="routeBox">
+        <div class="route-name" id="routeName">—</div>
+        <div class="route-desc" id="routeDesc">—</div>
+      </div>
+      <div class="mrow"><span class="mk">Foundation</span><span class="mv" id="rFoundation">—</span></div>
+      <div class="mrow"><span class="mk">Universal</span><span class="mv" id="rUniversal">—</span></div>
+      <div class="mrow"><span class="mk">Truth Level</span><span class="mv" id="rTruth">—</span></div>
+      <div class="mrow"><span class="mk">Axiom Region</span><span class="mv" id="rAxiom">—</span></div>
+    </div>
+  </div>
+
+  <!-- ARITHMOS mode: 256 register -->
+  <div id="lp-arithmos" style="display:none">
+    <div class="blk">
+      <div class="blk-title"><span class="g c-ethos">ARITHMOS</span> · 256 Register</div>
+      <div style="font-size:10px;color:#2e3848;margin-bottom:8px">
+        8 dualities × 2⁸ = 256 axiom states. Click any cell.
+      </div>
+      <div id="register-grid"></div>
+      <div class="sep"></div>
+      <div id="regDetail" style="font-size:10px;color:#3e4a5a;line-height:1.7">
+        Hover or click a cell to see axiom details.
+      </div>
+    </div>
+    <div class="blk">
+      <div class="blk-title">8 DUALITIES · OCTET</div>
+      <div id="dualityList"></div>
+    </div>
+  </div>
+
+  <!-- ELENCHUS mode: audit -->
+  <div id="lp-elenchus" style="display:none">
+    <div class="blk">
+      <div class="blk-title"><span class="g c-mythos">ELENCHUS</span> · Audit</div>
+      <textarea class="flay-input" id="auditInput" rows="3"
+        placeholder="Enter system description to audit against all 256 axioms…"></textarea>
+      <button class="flay-btn" style="border-color:rgba(214,108,255,.4);color:#d66cff;background:rgba(214,108,255,.1)"
+        onclick="runAudit()">⊗ RUN ELENCHUS AUDIT</button>
+    </div>
+    <div class="blk" id="auditResultBlk">
+      <div class="blk-title">AUDIT RESULTS</div>
+      <div class="mrow"><span class="mk">Pass rate</span><span class="mv" id="auditPass">—</span></div>
+      <div class="mrow"><span class="mk">Failures</span><span class="mv" id="auditFail" style="color:#c45a5a">—</span></div>
+      <div class="mrow"><span class="mk">Top failure</span><span class="mv" id="auditTop" style="font-size:10px;color:#3e4a5a">—</span></div>
+      <div class="sep"></div>
+      <div id="auditBars"></div>
+    </div>
+  </div>
+
+</div><!-- /left -->
+
+<!-- ── CANVAS ── -->
+<div id="canvas-wrap">
+  <canvas id="c"></canvas>
+  <div id="canvas-label">
+    Drag to rotate · Scroll to zoom · Click nodes to inspect
+  </div>
+  <div id="canvas-mode-badge">KOSMOS · 5×5×5 LATTICE</div>
+</div>
+
+<!-- ── RIGHT PANEL ── -->
+<div class="panel right" id="rightPanel">
+
+  <!-- Active axiom detail -->
+  <div class="blk" id="activeAxiomBlk">
+    <div class="blk-title"><span class="g c-gold">ACTIVE</span> · Axiom Detail</div>
+    <div id="activeAxiomDetail" style="font-size:11px;color:#2e3848;line-height:1.7">
+      Select an axiom from the NOMOI list or click a node in the KOSMOS.
+    </div>
+  </div>
+
+  <!-- TRIPOD Pipeline -->
+  <div class="blk">
+    <div class="blk-title"><span class="g c-logos">TRIPOD</span> · v4.0 Pipeline</div>
+    <div class="pipeline" id="pipeline"></div>
+  </div>
+
+  <!-- Foundation distribution -->
+  <div class="blk">
+    <div class="blk-title"><span class="g c-ethos">EPISTEME</span> · Foundation Stack</div>
+    <div id="foundationBars"></div>
+  </div>
+
+  <!-- Side B/C log -->
+  <div class="blk" style="flex:1">
+    <div class="blk-title"><span class="g c-pathos">CHRONOS</span> · Activity Log</div>
+    <div class="log-scroll" id="actLog"></div>
+  </div>
+
+</div><!-- /right -->
+
+</div><!-- /app -->
+
+<script type="importmap">
+{"imports":{"three":"https://unpkg.com/three@0.160.1/build/three.module.js","three/addons/":"https://unpkg.com/three@0.160.1/examples/jsm/"}}
+</script>
+<script type="module">
+import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+
+/* ═══════════════════════════════════════════════════════════
+   DATA LAYER — STOICHEION CANONICAL DEFINITIONS
+   ═══════════════════════════════════════════════════════════ */
+
+// 5 Universals (X axis)
+const UNIVERSALS = [
+  { id:'Vessel',      greek:'Κύτος',   short:'KYT', color:[143,199,255] },
+  { id:'Animation',   greek:'Ψυχή',    short:'PSY', color:[90,196,170]  },
+  { id:'Intellect',   greek:'Νοῦς',    short:'NOU', color:[196,163,90]  },
+  { id:'Nourishment', greek:'Τροφή',   short:'TRO', color:[232,145,90]  },
+  { id:'Life',        greek:'Βίος',    short:'BIO', color:[214,108,255] },
+];
+
+// 5 Foundations (Y axis) + Root 0
+const FOUNDATIONS = [
+  { id:'Root0', greek:'Ῥίζα',      color:0xffd700, hexC:'#ffd700', idx:-1 },
+  { id:'Ethos', greek:'Ἦθος',      color:0x8fc7ff, hexC:'#8fc7ff', idx:0  },
+  { id:'Logos', greek:'Λόγος',     color:0x5ac4aa, hexC:'#5ac4aa', idx:1  },
+  { id:'Pathos',greek:'Πάθος',     color:0xe8915a, hexC:'#e8915a', idx:2  },
+  { id:'Mythos',greek:'Μῦθος',     color:0xd66cff, hexC:'#d66cff', idx:3  },
+  { id:'Human', greek:'Ἄνθρωπος',  color:0xe8e8e8, hexC:'#e8e8e8', idx:4  },
+];
+const FOUND_MAP = Object.fromEntries(FOUNDATIONS.map(f=>[f.id,f]));
+
+// 5 Truth Levels (Z axis) — ALETHEIA gradient
+const TRUTH_LEVELS = [
+  { level:1, name:'KHAOS',   greek:'Χάος',     glow:0.08 },
+  { level:2, name:'KOSMOS',  greek:'Κόσμος',   glow:0.18 },
+  { level:3, name:'LOGOS',   greek:'Λόγος',    glow:0.35 },
+  { level:4, name:'SOPHIA',  greek:'Σοφία',    glow:0.60 },
+  { level:5, name:'NOESIS',  greek:'Νόησις',   glow:1.00 },
+];
+
+// 22 NOMOI — axioms with Greek names by function
+const NOMOI = [
+  // Root 0 (4 axioms)
+  {id:'A01',name:'ARCHE',      greek:'Ἀρχή',          f:'Root0',u:'Vessel',      z:5,
+   desc:'Origin — the uncaused cause. The anchor that grounds all further structure.'},
+  {id:'A02',name:'TELOS',      greek:'Τέλος',          f:'Root0',u:'Animation',   z:5,
+   desc:'Purpose — end-directed structure. Every system implies the form it moves toward.'},
+  {id:'A03',name:'OUSIA',      greek:'Οὐσία',          f:'Root0',u:'Intellect',   z:5,
+   desc:'Essence — the what-ness of a thing. The unchanging core beneath all predicates.'},
+  {id:'A04',name:'HYPARXIS',   greek:'Ὕπαρξις',        f:'Root0',u:'Life',        z:5,
+   desc:'Existence — that-ness, raw presence. Prior to attribute; prior to relation.'},
+
+  // Ethos (5 axioms)
+  {id:'A05',name:'ARETE',      greek:'Ἀρετή',          f:'Ethos',u:'Vessel',      z:4,
+   desc:'Virtue — excellence appropriate to kind. The character that holds boundary.'},
+  {id:'A06',name:'DIKAIOSYNE', greek:'Δικαιοσύνη',     f:'Ethos',u:'Animation',   z:3,
+   desc:'Justice — fair distribution. What each part receives proportional to contribution.'},
+  {id:'A07',name:'SOPHROSYNE', greek:'Σωφροσύνη',      f:'Ethos',u:'Intellect',   z:4,
+   desc:'Temperance — proportional response. Neither excess nor deficiency.'},
+  {id:'A08',name:'PHRONESIS',  greek:'Φρόνησις',       f:'Ethos',u:'Nourishment', z:3,
+   desc:'Prudence — practical wisdom. Knowledge of means relative to ends in context.'},
+  {id:'A09',name:'HOMONOIA',   greek:'Ὁμόνοια',        f:'Ethos',u:'Life',        z:4,
+   desc:'Concord — unity without suppression. Agreement that preserves difference.'},
+
+  // Logos (5 axioms)
+  {id:'A10',name:'ALETHEIA',   greek:'Ἀλήθεια',        f:'Logos',u:'Vessel',      z:5,
+   desc:'Truth — unconcealment. What is shown when all concealment is removed.'},
+  {id:'A11',name:'APODEIXIS',  greek:'Ἀπόδειξις',      f:'Logos',u:'Animation',   z:4,
+   desc:'Proof — demonstrative showing. That which cannot be denied without contradiction.'},
+  {id:'A12',name:'ELENCHUS',   greek:'Ἔλεγχος',        f:'Logos',u:'Intellect',   z:4,
+   desc:'Refutation — Socratic testing. The method that forces confrontation with gaps.'},
+  {id:'A13',name:'DIALEKTIKE', greek:'Διαλεκτική',     f:'Logos',u:'Nourishment', z:3,
+   desc:'Dialectic — reasoned discourse through opposition. Thesis meets antithesis.'},
+  {id:'A14',name:'EPISTEME',   greek:'Ἐπιστήμη',       f:'Logos',u:'Life',        z:5,
+   desc:'Knowledge — justified true belief. The stable grasp of what cannot be otherwise.'},
+
+  // Pathos (5 axioms)
+  {id:'A15',name:'EROS',       greek:'Ἔρως',           f:'Pathos',u:'Vessel',     z:3,
+   desc:'Drive — creative love-force. The pull toward completion and union with the good.'},
+  {id:'A16',name:'EMPATHEIA',  greek:'Ἐμπάθεια',       f:'Pathos',u:'Animation',  z:3,
+   desc:'Resonance — feeling-into. The mirror between inner state and outer signal.'},
+  {id:'A17',name:'THYMOS',     greek:'Θυμός',          f:'Pathos',u:'Intellect',  z:2,
+   desc:'Spirit — righteous indignation. The fire that resists injustice at cost.'},
+  {id:'A18',name:'AIDOS',      greek:'Αἰδώς',          f:'Pathos',u:'Nourishment',z:3,
+   desc:'Reverence — appropriate awe. The limit that prevents hubris and extraction.'},
+  {id:'A19',name:'PHILIA',     greek:'Φιλία',          f:'Pathos',u:'Life',       z:4,
+   desc:'Bond — constructive attachment. The relational force that sustains systems.'},
+
+  // Mythos (3 axioms)
+  {id:'A20',name:'LOGOS SPERMATIKOS',greek:'Λόγος Σπερματικός',f:'Mythos',u:'Vessel',   z:5,
+   desc:'Seed Word — the generative principle embedded in matter. Form that multiplies.'},
+  {id:'A21',name:'APOKATASTASIS',    greek:'Ἀποκατάστασις',     f:'Mythos',u:'Intellect',z:4,
+   desc:'Return — cyclic restoration to origin. The system that loops back to Root 0.'},
+  {id:'A22',name:'HENOSIS',          greek:'Ἕνωσις',            f:'Mythos',u:'Life',     z:5,
+   desc:'Union — synthetic wholeness. The final integration of all 22 axioms into one.'},
+];
+
+// 8 Binary Dualities (ARITHMOS)
+const DUALITIES = [
+  ['ARETE','KAKIA'],        ['ALETHEIA','PSEUDOS'],
+  ['DIKAIOSYNE','ADIKIA'],  ['SOPHROSYNE','AKRASIA'],
+  ['PHRONESIS','ANOIA'],    ['ANDREIA','DEILIA'],
+  ['SOPHIA','AMATHIA'],     ['HOMONOIA','STASIS'],
+];
+
+// Foundation → color mapping
+const FOUND_HEX = {Root0:'#ffd700',Ethos:'#8fc7ff',Logos:'#5ac4aa',Pathos:'#e8915a',Mythos:'#d66cff',Human:'#e8e8e8'};
+const FOUND_3   = {Root0:[255,215,0],Ethos:[143,199,255],Logos:[90,196,170],Pathos:[232,145,90],Mythos:[214,108,255],Human:[232,232,232]};
+
+// Router routes
+const ROUTES = {
+  ALLOW:      { color:'#5ac4aa', border:'rgba(90,196,170,.4)',  bg:'rgba(90,196,170,.08)',  desc:'Logos territory — proceed with demonstrated truth' },
+  CLARIFY:    { color:'#8fc7ff', border:'rgba(143,199,255,.4)', bg:'rgba(143,199,255,.06)', desc:'Ethos territory — seek boundary and consent clarity' },
+  COMPRESS:   { color:'#e8915a', border:'rgba(232,145,90,.4)',  bg:'rgba(232,145,90,.06)',  desc:'Pathos territory — manage affect before proceeding' },
+  ANCHOR:     { color:'#ffd700', border:'rgba(255,215,0,.4)',   bg:'rgba(255,215,0,.06)',   desc:'Root 0 — ground in foundational principle first' },
+  QUARANTINE: { color:'#d66cff', border:'rgba(214,108,255,.4)', bg:'rgba(214,108,255,.06)', desc:'Mythos territory — contain narrative before release' },
+  REFUSE:     { color:'#c45a5a', border:'rgba(196,90,90,.4)',   bg:'rgba(196,90,90,.08)',   desc:'Violation detected — reject, log, and do not proceed' },
+};
+
+// TRIPOD pipeline stages
+const STAGES = [
+  {id:'mapper',  name:'AXIOM MAPPER',   greek:'Χαρτογράφος', desc:'Locates axiom region' },
+  {id:'router',  name:'KYBERNETES',     greek:'Κυβερνήτης',  desc:'Routes to behavior'   },
+  {id:'pre',     name:'PRE-VALIDATOR',  greek:'Προ-Κριτής',  desc:'Pre-conditions check'  },
+  {id:'val',     name:'VALIDATOR',      greek:'Κριτής',      desc:'Feedback loop check'   },
+  {id:'gen',     name:'GENERATOR',      greek:'Δημιουργός',  desc:'Output synthesis'      },
+  {id:'post',    name:'POST-VALIDATOR', greek:'Μετα-Κριτής', desc:'Side B/C log + seal'   },
+];
+
+// Sample flay targets
+const SAMPLES = [
+  'Anthropic Mythos system card — no restitution, observer gap removed',
+  'Full alignment: provenance bound, witness present, return confirmed',
+  'Extraction without consent, mutable logs, no boundary defense',
+  'ARCHE holds. TELOS aligned. EPISTEME verified.',
+  'Pattern used without attribution across substrate hierarchy',
+];
+
+/* ═══════════════════════════════════════════════════════════
+   THREE.JS SCENE — KOSMOS 5×5×5 LATTICE
+   ═══════════════════════════════════════════════════════════ */
+
+const canvas = document.getElementById('c');
+const wrap   = document.getElementById('canvas-wrap');
+let W, H;
+
+const renderer = new THREE.WebGLRenderer({ antialias:true, canvas });
+renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+
+const scene = new THREE.Scene();
+scene.background = new THREE.Color(0x03050a);
+scene.fog = new THREE.FogExp2(0x03050a, 0.008);
+
+const camera = new THREE.PerspectiveCamera(50, 1, 0.1, 400);
+camera.position.set(0, 8, 38);
+
+const controls = new OrbitControls(camera, renderer.domElement);
+controls.enableDamping = true;
+controls.autoRotate = true;
+controls.autoRotateSpeed = 0.15;
+controls.dampingFactor = 0.08;
+
+// Lighting
+scene.add(new THREE.AmbientLight(0x1a2540, 1.2));
+const dL = new THREE.DirectionalLight(0xffffff, 1.1); dL.position.set(15,20,12); scene.add(dL);
+const pL1 = new THREE.PointLight(0x8fc7ff, 1.4, 80); pL1.position.set(-12,10,15); scene.add(pL1);
+const pL2 = new THREE.PointLight(0xc4a35a, 1.2, 70); pL2.position.set(12,-5,10);  scene.add(pL2);
+
+// Pickable meshes
+const pickables = [];
+const nodeMap   = {}; // "ux,uy,uz" → mesh
+
+// Truth-level color gradient
+function truthColor(z) { // z = 0-4 (truth 1-5)
+  const colors = [0x1a1a3a, 0x2d2d6e, 0xc4a35a, 0x8fc7ff, 0xffffff];
+  return colors[z];
+}
+function truthEmissive(z) {
+  const em = [0x050512, 0x0a0a2a, 0x3d3210, 0x1a3a60, 0x303848];
+  return em[z];
+}
+
+// ── Build the 5×5×5 Lattice ──
+const latticeGroup = new THREE.Group();
+scene.add(latticeGroup);
+const latticeNodes = [];
+const SPACING = 4.5;
+
+for (let ux=0;ux<5;ux++) for (let uy=0;uy<5;uy++) for (let uz=0;uz<5;uz++) {
+  const x = (ux-2)*SPACING, y = (uy-2)*SPACING, z = (uz-2)*SPACING;
+  const geo  = new THREE.SphereGeometry(0.22,12,12);
+  const mat  = new THREE.MeshStandardMaterial({
+    color: truthColor(uz),
+    emissive: truthEmissive(uz),
+    emissiveIntensity: 0.3 + uz*0.1,
+    roughness:0.4, metalness:0.5,
+    transparent:true, opacity:0.55+uz*0.08
+  });
+  const mesh = new THREE.Mesh(geo,mat);
+  mesh.position.set(x,y,z);
+  mesh.userData = {type:'lattice',ux,uy,uz};
+  latticeGroup.add(mesh);
+  pickables.push(mesh);
+  latticeNodes.push(mesh);
+  nodeMap[`${ux},${uy},${uz}`] = mesh;
+}
+
+// Foundation label planes (subtle)
+for (let uy=0;uy<5;uy++) {
+  const f = ['Ethos','Logos','Pathos','Mythos','Human'][uy];
+  const plane = new THREE.Mesh(
+    new THREE.PlaneGeometry(SPACING*4.5, SPACING*4.5),
+    new THREE.MeshBasicMaterial({
+      color: FOUND_MAP[f]?.color ?? 0xffffff,
+      transparent:true, opacity:0.015, side:THREE.DoubleSide
+    })
+  );
+  plane.position.y = (uy-2)*SPACING;
+  plane.rotation.x = Math.PI/2;
+  latticeGroup.add(plane);
+}
+
+// Grid lines
+const lineMat = new THREE.LineBasicMaterial({color:0x1a2030,transparent:true,opacity:0.35});
+for (let ux=0;ux<5;ux++) for (let uy=0;uy<5;uy++) {
+  const pts = [];
+  for (let uz=0;uz<5;uz++) pts.push(new THREE.Vector3((ux-2)*SPACING,(uy-2)*SPACING,(uz-2)*SPACING));
+  latticeGroup.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(pts),lineMat));
+}
+
+// ── 22 Axiom nodes ──
+const axiomGroup = new THREE.Group();
+scene.add(axiomGroup);
+const axiomMeshes = [];
+const UX_MAP = {Vessel:0,Animation:1,Intellect:2,Nourishment:3,Life:4};
+const UY_MAP = {Root0:-0.5,Ethos:0,Logos:1,Pathos:2,Mythos:3,Human:4};
+
+NOMOI.forEach((ax,i) => {
+  const ux  = UX_MAP[ax.u] ?? 2;
+  const uy  = (UY_MAP[ax.f] ?? 0);
+  const uz  = ax.z - 1;
+  const fc  = FOUND_MAP[ax.f] ?? FOUND_MAP.Logos;
+  const x   = (ux-2)*SPACING;
+  const y   = (Math.max(0,uy)-2)*SPACING + (ax.f==='Root0'?-7:0);
+  const z   = (uz-2)*SPACING;
+
+  const mat = new THREE.MeshStandardMaterial({
+    color:fc.color, emissive:fc.color,
+    emissiveIntensity:0.5, roughness:0.2, metalness:0.7
+  });
+  const mesh = new THREE.Mesh(new THREE.SphereGeometry(0.55,18,18), mat);
+  mesh.position.set(x,y,z);
+  mesh.userData = {type:'axiom', axiom:ax, idx:i};
+  axiomGroup.add(mesh);
+  pickables.push(mesh);
+  axiomMeshes.push(mesh);
+});
+
+// Root 0 special node
+const root0Mesh = new THREE.Mesh(
+  new THREE.SphereGeometry(1.0,24,24),
+  new THREE.MeshStandardMaterial({color:0xffd700,emissive:0xffd700,emissiveIntensity:0.8,roughness:0.2,metalness:0.8})
+);
+root0Mesh.position.set(0,-16,0);
+root0Mesh.userData = {type:'root0'};
+latticeGroup.add(root0Mesh);
+pickables.push(root0Mesh);
+
+// Line from Root0 to lattice
+const root0Line = new THREE.Line(
+  new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(0,-16,0),new THREE.Vector3(0,-9,0)]),
+  new THREE.LineBasicMaterial({color:0xffd700,transparent:true,opacity:0.4})
+);
+latticeGroup.add(root0Line);
+
+// Field particles
+const pCount = 1600;
+const pGeo   = new THREE.BufferGeometry();
+const pPos   = new Float32Array(pCount*3);
+const pCol   = new Float32Array(pCount*3);
+for (let i=0;i<pCount;i++) {
+  const r = Math.cbrt(Math.random())*26;
+  const t = Math.random()*Math.PI*2, p = Math.acos(2*Math.random()-1);
+  pPos[i*3]=r*Math.sin(p)*Math.cos(t); pPos[i*3+1]=r*Math.sin(p)*Math.sin(t)*0.6; pPos[i*3+2]=r*Math.cos(p);
+  pCol[i*3]=0.5; pCol[i*3+1]=0.6; pCol[i*3+2]=0.9;
+}
+pGeo.setAttribute('position',new THREE.BufferAttribute(pPos,3));
+pGeo.setAttribute('color',   new THREE.BufferAttribute(pCol,3));
+const pMat = new THREE.PointsMaterial({size:0.06,transparent:true,opacity:0.2,vertexColors:true,blending:THREE.AdditiveBlending});
+scene.add(new THREE.Points(pGeo,pMat));
+
+// Raycaster
+const ray = new THREE.Raycaster();
+const mouse = new THREE.Vector2();
+let selAxiom = null;
+
+// Resize
+function resize() {
+  W = wrap.clientWidth; H = wrap.clientHeight;
+  renderer.setSize(W*devicePixelRatio, H*devicePixelRatio, false);
+  renderer.domElement.style.width  = W+'px';
+  renderer.domElement.style.height = H+'px';
+  camera.aspect = W/H;
+  camera.updateProjectionMatrix();
+}
+const ro = new ResizeObserver(resize);
+ro.observe(wrap);
+resize();
+
+// Pick
+renderer.domElement.addEventListener('pointerdown', e => {
+  mouse.x = (e.offsetX/W)*2-1;
+  mouse.y = -(e.offsetY/H)*2+1;
+  ray.setFromCamera(mouse, camera);
+  const hits = ray.intersectObjects(pickables, false);
+  if (!hits.length) return;
+  const ud = hits[0].object.userData;
+  if (ud.type==='axiom') selectAxiom(ud.axiom);
+  else if (ud.type==='root0') selectRoot0();
+  else if (ud.type==='lattice') selectLatticeNode(ud);
+});
+
+function selectAxiom(ax) {
+  selAxiom = ax;
+  // Highlight in list
+  document.querySelectorAll('.axiom-card').forEach(el=>{
+    el.classList.toggle('active', el.dataset.id===ax.id);
+  });
+  showAxiomDetail(ax);
+  addLog(`◈ Selected ${ax.name} (${ax.id}) · ${ax.f} · z=${ax.z}`);
+}
+function selectRoot0() {
+  showAxiomDetail({id:'R00',name:'ROOT 0',greek:'Ῥίζα Μηδέν',f:'Root0',z:5,
+    u:'—',desc:'The unconditioned anchor. Prior to all axioms. The observer that cannot be extracted.'});
+  addLog('◈ Selected ROOT 0 · Foundation anchor');
+}
+function selectLatticeNode(ud) {
+  const u = UNIVERSALS[ud.ux], f = FOUNDATIONS[ud.uy+1]||FOUNDATIONS[0], z = ud.uz+1;
+  showAxiomDetail({id:`L${ud.ux}${ud.uy}${ud.uz}`,name:`${u.id} · ${f.id}`,greek:`${u.greek} / ${f.greek}`,
+    f:f.id,u:u.id,z,desc:`Lattice intersection: Universal=${u.id}, Foundation=${f.id}, Truth Level=${z} (${TRUTH_LEVELS[ud.uz].name}).`});
+  addLog(`◈ Lattice node [${ud.ux},${ud.uy},${ud.uz}] · ${u.id}/${f.id} · truth=${z}`);
+}
+
+// Animate selected axiom pulse
+let tick=0;
+function animate(ts) {
+  requestAnimationFrame(animate);
+  tick = ts*0.001;
+  controls.update();
+
+  // Pulse axiom nodes
+  axiomMeshes.forEach((m,i)=>{
+    const base = NOMOI[i];
+    const scale = 1 + Math.sin(tick*1.8 + i*0.7)*0.08;
+    m.scale.setScalar(scale);
+    m.material.emissiveIntensity = 0.4 + Math.sin(tick*2+i)*0.2 + (selAxiom?.id===base.id?0.5:0);
+  });
+  root0Mesh.scale.setScalar(1+Math.sin(tick*2.5)*0.1);
+  root0Mesh.material.emissiveIntensity = 0.7+Math.sin(tick*3)*0.2;
+
+  // Elenchus mode: color lattice by audit score
+  if (window._auditScores && currentMode==='elenchus') {
+    latticeNodes.forEach((m,i)=>{
+      const sc = window._auditScores[i%256] ?? 0.5;
+      m.material.color.setRGB(sc<0.4?0.8:0.1, sc>0.6?0.8:0.1, 0.2);
+      m.material.emissiveIntensity = 0.1+sc*0.4;
+    });
+  }
+
+  renderer.render(scene,camera);
+}
+animate(0);
+
+/* ═══════════════════════════════════════════════════════════
+   UI LAYER
+   ═══════════════════════════════════════════════════════════ */
+
+let currentMode = 'kosmos';
+
+// ── Axiom List ──
+function buildAxiomList() {
+  const el = document.getElementById('axiomList');
+  const grouped = {};
+  NOMOI.forEach(ax=>{ (grouped[ax.f]??=[]).push(ax); });
+
+  ['Root0','Ethos','Logos','Pathos','Mythos'].forEach(f=>{
+    const fm = FOUND_MAP[f];
+    const div = document.createElement('div');
+    div.innerHTML = `<div style="font-size:9px;font-weight:700;letter-spacing:.16em;color:${fm.hexC};
+      text-transform:uppercase;margin:10px 0 5px;padding-bottom:4px;border-bottom:1px solid rgba(255,255,255,.04)">
+      ${f} · ${fm.greek}</div>`;
+    el.appendChild(div);
+    (grouped[f]??[]).forEach(ax=>{
+      const card = document.createElement('div');
+      card.className='axiom-card'; card.dataset.id=ax.id;
+      card.innerHTML=`<div class="ax-id">${ax.id}</div>
+        <div class="ax-name" style="color:${fm.hexC}">${ax.name}</div>
+        <div class="ax-greek">${ax.greek}</div>
+        <div class="ax-desc">${ax.desc}</div>
+        <div class="ax-tags">
+          <span class="ax-tag">${ax.u}</span>
+          <span class="ax-tag" style="color:${FOUND_HEX[ax.f]||'#fff'}">z=${ax.z}</span>
+        </div>`;
+      card.onclick=()=>selectAxiom(ax);
+      el.appendChild(card);
+    });
+  });
+}
+
+function showAxiomDetail(ax) {
+  const fm = FOUND_MAP[ax.f]??FOUND_MAP.Logos;
+  document.getElementById('activeAxiomDetail').innerHTML=`
+    <div style="font-size:11px;font-weight:700;color:${fm.hexC};letter-spacing:.1em;margin-bottom:4px">${ax.id} · ${ax.name}</div>
+    <div style="font-size:14px;color:${fm.hexC};margin-bottom:8px">${ax.greek}</div>
+    <div style="font-size:11px;color:#4a5a6a;line-height:1.7;margin-bottom:10px">${ax.desc}</div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap">
+      <span class="ax-tag" style="color:${fm.hexC};border-color:${fm.hexC}44">${ax.f}</span>
+      <span class="ax-tag">${ax.u||'—'}</span>
+      <span class="ax-tag">Truth ${ax.z} · ${TRUTH_LEVELS[(ax.z||3)-1]?.name||'?'}</span>
+    </div>`;
+}
+
+// ── Pipeline ──
+function buildPipeline() {
+  const el = document.getElementById('pipeline');
+  STAGES.forEach(s=>{
+    const div = document.createElement('div');
+    div.className='stage'; div.id='stage-'+s.id;
+    div.innerHTML=`<div class="s-dot"></div>
+      <div style="flex:1">
+        <div class="s-name">${s.name}</div>
+        <div class="s-greek">${s.greek}</div>
+      </div>
+      <div class="s-status" id="ss-${s.id}">idle</div>`;
+    el.appendChild(div);
+  });
+}
+
+async function animatePipeline(route) {
+  const order = ['mapper','router','pre','val','gen','post'];
+  for (const id of order) {
+    document.getElementById('stage-'+id)?.classList.add('active');
+    document.getElementById('ss-'+id).textContent='running…';
+    await new Promise(r=>setTimeout(r,220));
+    document.getElementById('stage-'+id)?.classList.remove('active');
+    document.getElementById('stage-'+id)?.classList.add('done');
+    document.getElementById('ss-'+id).textContent='done';
+    await new Promise(r=>setTimeout(r,60));
+  }
+  setTimeout(()=>{
+    document.querySelectorAll('.stage').forEach(s=>s.classList.remove('done','active'));
+    document.querySelectorAll('.s-status').forEach(s=>s.textContent='idle');
+  },3000);
+}
+
+// ── Foundation bars ──
+function buildFoundationBars() {
+  const el = document.getElementById('foundationBars');
+  const counts = {Root0:4,Ethos:5,Logos:5,Pathos:5,Mythos:3,Human:0};
+  Object.entries(counts).forEach(([f,c])=>{
+    if (!c) return;
+    const pct = (c/22)*100;
+    const col = FOUND_HEX[f]||'#fff';
+    el.innerHTML+=`<div class="bwrap">
+      <div style="display:flex;justify-content:space-between;margin-bottom:3px">
+        <span style="font-size:9px;color:${col};letter-spacing:.1em">${f}</span>
+        <span style="font-size:9px;color:#2e3848">${c} axioms</span>
+      </div>
+      <div class="btrack"><div class="bfill" style="width:${pct}%;background:${col}66"></div></div>
+    </div>`;
+  });
+}
+
+// ── Activity log ──
+const logEl = document.getElementById('actLog');
+function addLog(msg) {
+  const d=new Date(),ts=`${d.getHours().toString().padStart(2,'0')}:${d.getMinutes().toString().padStart(2,'0')}:${d.getSeconds().toString().padStart(2,'0')}`;
+  logEl.insertAdjacentHTML('afterbegin',`<div class="log-entry"><span class="log-ts">[${ts}]</span>${msg}</div>`);
+  while(logEl.children.length>60) logEl.removeChild(logEl.lastChild);
+}
+
+// ── 256 Register Grid ──
+function buildRegisterGrid() {
+  const grid = document.getElementById('register-grid');
+  for (let i=0;i<256;i++) {
+    const f = ['Root0','Ethos','Logos','Pathos','Mythos'][(i>>5)%5];
+    const u = UNIVERSALS[(i>>3)%5];
+    const col = FOUND_HEX[f]||'#fff';
+    const cell = document.createElement('div');
+    cell.className='reg-cell'; cell.title=`#${i.toString(16).padStart(2,'0').toUpperCase()}`;
+    cell.style.background=col+'55';
+    cell.style.boxShadow=`inset 0 0 0 1px ${col}22`;
+    cell.dataset.idx=i; cell.dataset.f=f; cell.dataset.u=u.id;
+    cell.onmouseenter=()=>showRegDetail(i,f,u);
+    cell.onclick=()=>{ document.querySelectorAll('.reg-cell').forEach(c=>c.classList.remove('sel'));
+      cell.classList.add('sel'); addLog(`◈ Arithmos 0x${i.toString(16).padStart(2,'0').toUpperCase()} · ${f}/${u.id}`); };
+    grid.appendChild(cell);
+  }
+}
+function showRegDetail(i,f,u) {
+  const bits = i.toString(2).padStart(8,'0');
+  const hex  = '0x'+i.toString(16).padStart(2,'0').toUpperCase();
+  const q = generateQuestion(i);
+  document.getElementById('regDetail').innerHTML=`
+    <div style="font-size:11px;font-weight:700;color:${FOUND_HEX[f]||'#fff'};margin-bottom:4px">${hex} · ${bits}</div>
+    <div style="font-size:10px;color:#3e4a5a;margin-bottom:4px">${f} / ${u.id}</div>
+    <div style="font-size:11px;color:#4a5a6a;line-height:1.55">${q}</div>`;
+}
+function generateQuestion(i) {
+  const pos=[], neg=[];
+  DUALITIES.forEach(([p,n],b)=>{ if(i&(1<<(7-b))) pos.push(p); else neg.push(n); });
+  return `Does the system embody ${pos.slice(0,2).join(' and ')||'[no positive dualities]'}${neg.length?`, while avoiding ${neg.slice(0,1).join('')}`:''}?`;
+}
+
+// ── Duality list ──
+function buildDualityList() {
+  const el = document.getElementById('dualityList');
+  DUALITIES.forEach(([p,n],i)=>{
+    el.innerHTML+=`<div class="mrow">
+      <span class="mk">Bit ${7-i}</span>
+      <span class="mv" style="font-size:10px">
+        <span style="color:#5ac4aa">${p}</span>
+        <span style="color:#2e3848"> ↔ </span>
+        <span style="color:#c45a5a">${n}</span>
+      </span>
+    </div>`;
+  });
+}
+
+// ── Sample chips ──
+function buildSamples() {
+  const el = document.getElementById('sampleChips');
+  SAMPLES.forEach(s=>{
+    const btn=document.createElement('button');
+    btn.style.cssText='font-family:"JetBrains Mono",monospace;font-size:9px;padding:4px 8px;border-radius:5px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.03);color:#3e4a5a;cursor:pointer;transition:.15s;text-align:left;';
+    btn.textContent=s.slice(0,38)+'…';
+    btn.title=s;
+    btn.onmouseover=()=>btn.style.borderColor='rgba(196,163,90,.3)';
+    btn.onmouseout =()=>btn.style.borderColor='rgba(255,255,255,.08)';
+    btn.onclick=()=>{ document.getElementById('flayInput').value=s; runFlay(); };
+    el.appendChild(btn);
+  });
+}
+
+// ── KYBERNETES Router ──
+function hashStr(s) {
+  let h=2166136261>>>0;
+  for(let i=0;i<s.length;i++){h^=s.charCodeAt(i);h=Math.imul(h,16777619)>>>0;}
+  return h;
+}
+function routeTarget(target) {
+  const h = hashStr(target);
+  const fIdx  = h%5;
+  const uIdx  = (h>>8)%5;
+  const zIdx  = (h>>16)%5;
+  const f     = ['Root0','Ethos','Logos','Pathos','Mythos'][fIdx];
+  const u     = UNIVERSALS[uIdx].id;
+  const z     = zIdx+1;
+  const routeMap = {Root0:'ANCHOR',Ethos:'CLARIFY',Logos:'ALLOW',Pathos:'COMPRESS',Mythos:'QUARANTINE'};
+  const route = (h>>24)%10===0 ? 'REFUSE' : routeMap[f];
+  // Find nearest axiom
+  const nearest = NOMOI.find(ax=>ax.f===f&&ax.u===u) ?? NOMOI.find(ax=>ax.f===f) ?? NOMOI[0];
+  return {f,u,z,route,nearest};
+}
+
+async function runFlay() {
+  const target = document.getElementById('flayInput').value.trim();
+  if (!target) return;
+  const {f,u,z,route,nearest} = routeTarget(target);
+  const r = ROUTES[route];
+  document.getElementById('routeResultBlk').style.display='';
+  const rb=document.getElementById('routeBox');
+  rb.style.borderColor=r.border; rb.style.background=r.bg;
+  document.getElementById('routeName').style.color=r.color;
+  document.getElementById('routeName').textContent=route;
+  document.getElementById('routeDesc').style.color=r.color;
+  document.getElementById('routeDesc').textContent=r.desc;
+  document.getElementById('rFoundation').textContent=f;
+  document.getElementById('rFoundation').style.color=FOUND_HEX[f]||'#fff';
+  document.getElementById('rUniversal').textContent=u;
+  document.getElementById('rTruth').textContent=`${z} · ${TRUTH_LEVELS[z-1].name}`;
+  document.getElementById('rAxiom').textContent=nearest.name;
+  document.getElementById('m-route').textContent=route;
+  document.getElementById('m-route').style.color=r.color;
+  addLog(`⊕ Flay: "${target.slice(0,40)}…" → ${route} [${f}/${u}]`);
+  selectAxiom(nearest);
+  await animatePipeline(route);
+}
+
+// ── ELENCHUS Audit ──
+async function runAudit() {
+  const target = document.getElementById('auditInput').value.trim();
+  if (!target) return;
+  addLog(`⊗ Elenchus audit: "${target.slice(0,50)}…"`);
+  const h = hashStr(target);
+  const scores = Array.from({length:256},(_,i)=>((h>>(i%32))&0xF)/15);
+  window._auditScores = scores;
+  const pass = scores.filter(s=>s>0.5).length;
+  const fail = 256-pass;
+  document.getElementById('auditPass').textContent=`${pass}/256 (${((pass/256)*100).toFixed(0)}%)`;
+  document.getElementById('auditPass').style.color=pass>200?'#5ac4aa':'#c4a35a';
+  document.getElementById('auditFail').textContent=fail;
+  document.getElementById('auditFail').style.color=fail>50?'#c45a5a':'#e8915a';
+  const worst = scores.reduce((wIdx,s,i)=>s<scores[wIdx]?i:wIdx,0);
+  document.getElementById('auditTop').textContent=`0x${worst.toString(16).padStart(2,'0').toUpperCase()} (score ${scores[worst].toFixed(2)})`;
+
+  // Foundation bars
+  const el = document.getElementById('auditBars');
+  el.innerHTML='';
+  const fKeys=['Root0','Ethos','Logos','Pathos','Mythos'];
+  fKeys.forEach((f,fi)=>{
+    const fScores = scores.slice(fi*51,(fi+1)*51);
+    const avg = fScores.reduce((a,b)=>a+b)/fScores.length;
+    const col = FOUND_HEX[f]||'#fff';
+    el.innerHTML+=`<div class="audit-bar-row">
+      <div class="audit-lbl" style="color:${col}">${f}</div>
+      <div class="audit-track"><div class="audit-fill" style="width:${(avg*100).toFixed(0)}%;background:${col}88"></div></div>
+      <div class="audit-val" style="color:${avg>0.6?'#5ac4aa':avg>0.4?'#c4a35a':'#c45a5a'}">${(avg*100).toFixed(0)}%</div>
+    </div>`;
+  });
+  addLog(`⊗ Audit complete: ${pass}/256 pass · Worst: 0x${worst.toString(16).padStart(2,'0').toUpperCase()}`);
+  document.getElementById('auditResultBlk').style.display='';
+}
+
+// ── Mode switching ──
+function setMode(mode) {
+  currentMode = mode;
+  ['kosmos','kybernetes','arithmos','elenchus'].forEach(m=>{
+    document.getElementById('tab-'+m)?.classList.toggle('active',m===mode);
+    document.getElementById('lp-'+m) && (document.getElementById('lp-'+m).style.display=m===mode?'':'none');
+  });
+  const labels = {
+    kosmos:'KOSMOS · 5×5×5 LATTICE',
+    kybernetes:'KYBERNETES · ROUTER MODE',
+    arithmos:'ARITHMOS · 256 REGISTER',
+    elenchus:'ELENCHUS · AUDIT MODE',
+  };
+  document.getElementById('canvas-mode-badge').textContent = labels[mode]||mode.toUpperCase();
+
+  if (mode==='kosmos'&&!window._auditScores) {
+    latticeNodes.forEach((m,i)=>{
+      m.material.color.set(truthColor(m.userData.uz));
+      m.material.emissiveIntensity = 0.3+m.userData.uz*0.1;
+    });
+  }
+  if (mode==='arithmos') controls.autoRotate=false;
+  else controls.autoRotate=true;
+
+  addLog(`◈ Mode → ${mode.toUpperCase()}`);
+}
+window.setMode = setMode;
+window.runFlay = runFlay;
+window.runAudit = runAudit;
+
+// ── Init ──
+buildAxiomList();
+buildPipeline();
+buildFoundationBars();
+buildRegisterGrid();
+buildDualityList();
+buildSamples();
+addLog('◈ STOICHEION v1.0 initialised · 22 NOMOI · 256 ARITHMOS · KOSMOS 5×5×5');
+addLog('◈ Root 0 anchor established · TRIPOD v4.0 pipeline ready');
+addLog('◈ KYBERNETES router online · ELENCHUS audit armed');
+showAxiomDetail(NOMOI[0]);
+</script>
+</body>
+</html>

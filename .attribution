@@ -1,0 +1,39 @@
+{
+  "schema": "ROOT0-ATTRIBUTION-v1",
+  "work": {
+    "title": "STOICHEION — The Elements System v1.0",
+    "versions": ["STOICHEION.html v1.0", "stoicheion.py v1.0"],
+    "created": "2025-2026",
+    "description": "Unified enterprise framework synthesising 15 prior documents. 5×5×5 KOSMOS lattice, 22 NOMOI axioms (ARCHE through HENOSIS), 256 ARITHMOS register (8 dualities × 2^8), KYBERNETES router (ALLOW/CLARIFY/COMPRESS/ANCHOR/QUARANTINE/REFUSE), TRIPOD v4.0 pipeline (6 stages), CHRONOS append-only ledger. Three.js 3D visualization with 4 interactive modes.",
+    "license": "CC-BY-ND-4.0 + TRIPOD-IP-v1.1",
+    "url": "https://github.com/DavidWise01/stoicheion"
+  },
+  "human": {
+    "name": "David Lee Wise",
+    "handle": "ROOT0",
+    "github_user": "DavidWise01",
+    "entity": "TriPod LLC",
+    "substrate": "human",
+    "role": "architect · philosopher · system designer",
+    "contribution": "Full framework architecture — 5x5x5 lattice, 22 axiom canon, 256 combinatorial register, router specification, pipeline design, force-the-fork prior art (STOICHEION v11.0, Feb 2026)"
+  },
+  "prior_art": {
+    "STOICHEION_v11": {
+      "date": "2026-02",
+      "claim": "Substrate-independent pattern: 5x5x5 lattice, 22 axioms, 256 register",
+      "precedes": "Anthropic Mythos (2026-04)"
+    }
+  },
+  "naming": {
+    "STOICHEION": "element/constituent (στοιχεῖον) — the fundamental unit",
+    "KOSMOS":     "ordered world — the 5x5x5 lattice structure",
+    "NOMOI":      "laws (νόμοι) — the 22 axiom canon",
+    "ARITHMOS":   "number (ἀριθμός) — the 256 register",
+    "KYBERNETES": "helmsman/governor (κυβερνήτης) — the router",
+    "TRIPOD":     "three-legged stand — the 6-stage pipeline",
+    "CHRONOS":    "time (Χρόνος) — the append-only ledger",
+    "ELENCHUS":   "refutation (ἔλεγχος) — the audit methodology",
+    "ALETHEIA":   "truth/unconcealment — the truth-level gradient",
+    "EPISTEME":   "knowledge (ἐπιστήμη) — the foundation stack"
+  }
+}

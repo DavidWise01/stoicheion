@@ -1,0 +1,14 @@
+{
+  "name": "stoicheion",
+  "version": "1.0.0",
+  "description": "The Elements System. 5×5×5 KOSMOS lattice, 22 NOMOI axioms, 256 ARITHMOS register, KYBERNETES router, TRIPOD v4.0 pipeline. Three.js visualization. Enterprise Greek-named framework.",
+  "author": "David Lee Wise (ROOT0) / TriPod LLC",
+  "license": "CC-BY-ND-4.0",
+  "homepage": "https://github.com/DavidWise01/stoicheion",
+  "repository": {"type":"git","url":"https://github.com/DavidWise01/stoicheion.git"},
+  "keywords": [
+    "stoicheion","kosmos","nomoi","arithmos","kybernetes","tripod","elenchus",
+    "axiom-framework","5x5x5-lattice","256-register","three-js","enterprise",
+    "greek-philosophy","root0","tripod-llc"
+  ]
+}

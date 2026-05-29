@@ -1,0 +1,8 @@
+.DS_Store
+Thumbs.db
+*.swp
+*.pyc
+__pycache__/
+stoicheion_ledger/
+stoicheion_256.json
+node_modules/
