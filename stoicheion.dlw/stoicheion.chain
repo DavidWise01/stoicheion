@@ -1,0 +1,9 @@
+ROOT0-DLW-CHAIN-v1
+index : 68
+slug  : stoicheion
+seal  : c5f180817274f247623472a6c3723264fefcc41d2a41aec6e5aa064b63f1f357
+prev  : ccada8627f3029d2cb965913a769a5b44c7baa5f58ab6ea4c3773d040f5b6bf1
+link  : 83ad9ea04c1531d67f507439c037bbbb674b86cc3361effb45ec8b1a2b77288c
+head  : 3447d3a0533aaf1e29a8bdc67a9774884fb3ae9dbc8a17064b7a008ca3c4ec90
+
+— the tether: link = sha256(index|slug|seal|prev). the chain head commits to the whole corpus.
