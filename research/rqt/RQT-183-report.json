@@ -1,0 +1,15 @@
+{
+  "boundary": "RQT-183",
+  "status": "PASS",
+  "source_X_sha256": "f23bf0c7897bd89a6d3113cb72b6df9e61fbb1b1feaf6dbf50c2f0079138357c",
+  "source_G_sha256": "4ae9d82c774a950ffc1acaabd70ac8a79c66f4d67051363734d6e01d9ca33ceb",
+  "discriminant": "Z/4",
+  "extension_rule": "sign_on_discriminant=sign_on_h",
+  "cases": {
+    "identity": true,
+    "original_X": true,
+    "root_reflection": true,
+    "sign_reverse_K_only": false,
+    "negative_identity": true
+  }
+}
