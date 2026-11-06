@@ -1,0 +1,14 @@
+{
+  "RQT": 186,
+  "status": "PASS",
+  "matrix": "original RQT-133 X-22x22",
+  "negative_X_eigenspace_rank": 7,
+  "negative_X_eigenspace_Gram_det": -64,
+  "spinor_class_X": "[-2]",
+  "negative_X2_eigenspace_rank": 14,
+  "negative_X2_eigenspace_Gram_det": 16,
+  "spinor_class_X2": "[1]",
+  "spinor_obstruction_detected": false,
+  "explicit_root_factorization": "OPEN",
+  "generation_claim": "NOT PROVEN"
+}
