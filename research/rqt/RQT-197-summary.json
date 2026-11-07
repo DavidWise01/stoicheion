@@ -1,0 +1,41 @@
+{
+  "boundary": "RQT-197",
+  "status": "EXACT_WALL_FORM_NECESSARY_CONDITIONS",
+  "det_W": "1/4096",
+  "common_denominator": 4,
+  "smith_4W": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4
+  ],
+  "necessary_21_root_index": 64,
+  "necessary_21_root_Wall_basis": "integral upper-unitriangular",
+  "verified_23_root_Wall_entry_denominators": {
+    "1": 397,
+    "2": 36,
+    "4": 96
+  },
+  "remaining_minimal_candidates": [
+    21,
+    23
+  ],
+  "shorter_factorization": "OPEN"
+}
