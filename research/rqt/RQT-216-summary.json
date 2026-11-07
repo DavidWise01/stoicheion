@@ -1,0 +1,27 @@
+{
+  "RQT": 216,
+  "status": "SATURATED_RANK_SIX_KERNEL_BOUNDED_NONFINDING",
+  "prior_flag_rank": 15,
+  "constraint_rank": 15,
+  "saturated_kernel_rank": 6,
+  "final_pivot_gcd": 1,
+  "kernel_Gram_determinant": "-313982794406122741723132503868",
+  "numerical_signature": [
+    1,
+    5
+  ],
+  "exhaustive_first_five_bound": 30,
+  "exhaustive_first_five_cases": 844596301,
+  "last_coordinate_unbounded": true,
+  "roots_found": 0,
+  "mod4_compatible": 2048,
+  "mod4_total": 4096,
+  "mod8_compatible": 69632,
+  "mod8_total": 262144,
+  "sixteenth_root": "OPEN",
+  "full_21_root_word": "OPEN",
+  "minimum_candidates": [
+    21,
+    23
+  ]
+}
