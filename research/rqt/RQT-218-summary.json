@@ -1,0 +1,39 @@
+{
+  "RQT": 218,
+  "status": "RATIONAL_ROOT_DENOMINATOR_RIGIDITY_PASS",
+  "prior_integral_roots": 15,
+  "rank_six_kernel": 6,
+  "integer_root": "OPEN",
+  "rational_root_numerator": [
+    0,
+    0,
+    2,
+    0,
+    1,
+    -2
+  ],
+  "rational_root_denominator": 1845,
+  "discriminant_prime_factors": {
+    "2": 2,
+    "19": 2,
+    "293": 1,
+    "439": 1,
+    "36919": 1,
+    "115204693": 1,
+    "397453583": 1
+  },
+  "pairing_numerator": [
+    1187012,
+    257661,
+    -392622,
+    -821191,
+    -2966076,
+    1528365
+  ],
+  "pairing_denominator": 1845,
+  "additive_extension_index": 1845,
+  "additive_extension_integral": false,
+  "ambient_reflection_exact_denominator": 3404025,
+  "ambient_reflection_integral": false,
+  "full_21_root_word": "OPEN"
+}
