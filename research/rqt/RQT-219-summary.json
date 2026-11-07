@@ -1,0 +1,23 @@
+{
+  "RQT": 219,
+  "status": "EXACT_PRIMITIVE_ROOT_DIVISIBILITY_DICHOTOMY",
+  "certified_prior_roots": 15,
+  "kernel_rank": 6,
+  "root_exists": "OPEN",
+  "root_must_be_primitive": true,
+  "possible_pairing_divisibilities": [
+    1,
+    2
+  ],
+  "binary_compatible_div1": 30,
+  "binary_compatible_div2": 2,
+  "mod4_compatible_div1": 1920,
+  "mod4_compatible_div2": 128,
+  "mod8_compatible_div1": 61440,
+  "mod8_compatible_div2": 8192,
+  "conditional_complement_determinants": {
+    "d1": "627965588812245483446265007736",
+    "d2": "156991397203061370861566251934"
+  },
+  "full_21_reflection_word": "OPEN"
+}
