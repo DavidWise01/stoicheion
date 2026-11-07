@@ -1,0 +1,27 @@
+{
+  "boundary": "RQT-194",
+  "status": "EXACT_WORD_NORMALIZATION_PASS",
+  "original_rank_X_minus_I": 21,
+  "det_X": -1,
+  "verified_upper_bound": 25,
+  "minimal_length_candidates": [
+    21,
+    23,
+    25
+  ],
+  "repeated_root_positions": [
+    1,
+    20
+  ],
+  "commute_positions": "3 through 19",
+  "A2_pairing": 1,
+  "commuted_word_equals_X": true,
+  "braided_word_equals_X": true,
+  "immediate_cancellations": 0,
+  "proved_minimality": false,
+  "shorter_root_word": "OPEN",
+  "source_sha256": {
+    "X": "f23bf0c7897bd89a6d3113cb72b6df9e61fbb1b1feaf6dbf50c2f0079138357c",
+    "G": "4ae9d82c774a950ffc1acaabd70ac8a79c66f4d67051363734d6e01d9ca33ceb"
+  }
+}
