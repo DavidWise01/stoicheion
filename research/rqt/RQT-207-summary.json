@@ -1,0 +1,13 @@
+{
+  "boundary": 207,
+  "status": "EXACT_SEVENTH_ROOT_PASS",
+  "flag_rank": 7,
+  "root_square": -2,
+  "all_six_Wall_constraints": true,
+  "fixes_h": true,
+  "full_21_root_word": "OPEN",
+  "minimum_candidates": [
+    21,
+    23
+  ]
+}
