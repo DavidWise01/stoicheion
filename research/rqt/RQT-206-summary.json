@@ -1,0 +1,35 @@
+{
+  "boundary": "RQT-206",
+  "status": "SATURATED_KERNEL_AND_PARITY_AUDIT",
+  "prior_roots": 6,
+  "exact_constraint_rank": 6,
+  "saturated_integral_kernel_rank": 15,
+  "pivot_columns": [
+    1,
+    2,
+    6,
+    9,
+    11,
+    13
+  ],
+  "pivot_determinant": 2,
+  "free_parity_index": 2,
+  "restricted_Gram_determinant": "393184631552",
+  "restricted_signature_numerical": [
+    1,
+    14
+  ],
+  "binary_classes": 32768,
+  "norm_mod4_compatible": 15360,
+  "binary_compatible_span_rank": 15,
+  "exact_roots_found_signed_support_upto3": 0,
+  "seventh_root": "OPEN",
+  "minimal_length": [
+    21,
+    23
+  ],
+  "source_sha256": {
+    "X": "f23bf0c7897bd89a6d3113cb72b6df9e61fbb1b1feaf6dbf50c2f0079138357c",
+    "G": "4ae9d82c774a950ffc1acaabd70ac8a79c66f4d67051363734d6e01d9ca33ceb"
+  }
+}
