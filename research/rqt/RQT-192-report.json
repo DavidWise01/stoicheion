@@ -1,0 +1,12 @@
+{
+  "RQT": 192,
+  "status": "CONSTRUCTIVE_2ADIC_SOLUBILITY_PASS",
+  "seed_r_norm": -382,
+  "seed_r_dot_a": -4,
+  "seed_r_dot_u": 0,
+  "lifting_direction": "k0",
+  "verified_norm_congruence": "r²=-2 mod 2^21",
+  "verified_parity_coset": "z²=0 mod 2^23",
+  "proof": "Hensel lift for every k>=2; odd r·k0 and even k0²",
+  "global_integral_solution": "OPEN"
+}
