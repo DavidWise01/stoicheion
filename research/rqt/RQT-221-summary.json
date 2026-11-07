@@ -1,0 +1,44 @@
+{
+  "RQT": 221,
+  "status": "BOTH_D2_CLASSES_Z2_SOLUBLE",
+  "branches": [
+    {
+      "class": [
+        0,
+        0,
+        1,
+        1,
+        0,
+        1
+      ],
+      "j": 3,
+      "polynomial": [
+        -337450,
+        53779,
+        -142338
+      ],
+      "t_mod_2_64": "6499668843087076870"
+    },
+    {
+      "class": [
+        1,
+        1,
+        0,
+        1,
+        0,
+        0
+      ],
+      "j": 1,
+      "polynomial": [
+        -102145,
+        -90741,
+        -111758
+      ],
+      "t_mod_2_64": "3886618388119862109"
+    }
+  ],
+  "norm_congruence_modulus_exponent": 67,
+  "each_branch_pairing_divisibility_2": true,
+  "global_integral_root": "OPEN",
+  "certified_prior_integral_roots": 15
+}
