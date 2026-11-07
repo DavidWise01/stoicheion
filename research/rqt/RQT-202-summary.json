@@ -1,0 +1,19 @@
+{
+  "boundary": "RQT-202",
+  "status": "EXACT_MOD4_LIFT_AND_BOUNDED_NONFINDING",
+  "prior_chain_rank": 3,
+  "linear_Wall_constraint_rank": 3,
+  "linear_nullspace_dimension_over_Q": 18,
+  "exhaustive_support_pm1": 7,
+  "exhaustive_support_pm2": 5,
+  "exact_square_minus2_roots_found_in_these_domains": 0,
+  "binary_classes_total": 2097152,
+  "binary_linear_compatible": 262144,
+  "binary_linear_plus_norm_compatible": 122880,
+  "mod4_lift_exists": true,
+  "fourth_root_existence": "OPEN",
+  "minimal_word_length": [
+    21,
+    23
+  ]
+}
