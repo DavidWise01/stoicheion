@@ -1,0 +1,96 @@
+{
+  "boundary": "RQT-205",
+  "status": "SIXTH_INTEGRAL_WALL_ROOT_PASS",
+  "flag_rank": 6,
+  "constraint_rank": 5,
+  "saturated_kernel_rank": 16,
+  "unit_pivots": [
+    0,
+    1,
+    5,
+    9,
+    20
+  ],
+  "root_square": -2,
+  "all_prior_Wall_constraints": true,
+  "independent": true,
+  "fixes_h": true,
+  "wall_matrix": [
+    [
+      1,
+      0,
+      0,
+      0,
+      -7,
+      115
+    ],
+    [
+      0,
+      1,
+      0,
+      3,
+      -36,
+      -11
+    ],
+    [
+      0,
+      0,
+      1,
+      -1,
+      21,
+      -17
+    ],
+    [
+      0,
+      0,
+      0,
+      1,
+      62,
+      -457
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      1,
+      5116
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      1
+    ]
+  ],
+  "root_lattice_coordinates": [
+    -60,
+    -207,
+    -819,
+    -7,
+    83,
+    -28,
+    220,
+    288,
+    811,
+    50,
+    -60,
+    -24,
+    369,
+    425,
+    202,
+    -14,
+    -202,
+    -245,
+    380,
+    -286,
+    207
+  ],
+  "full_21_root_word": "OPEN",
+  "minimal_candidates": [
+    21,
+    23
+  ]
+}
