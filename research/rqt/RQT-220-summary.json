@@ -1,0 +1,33 @@
+{
+  "RQT": 220,
+  "status": "EXACT_TWO_PRIMARY_DISCRIMINANT_FORM",
+  "group": "(Z/2Z)^2",
+  "quadratic_form": "<-1/2> ⊕ <-1/2>",
+  "q_values_mod_2": [
+    "0",
+    "3/2",
+    "3/2",
+    "1"
+  ],
+  "eligible_divisibility_two_classes": [
+    [
+      0,
+      0,
+      1,
+      1,
+      0,
+      1
+    ],
+    [
+      1,
+      1,
+      0,
+      1,
+      0,
+      0
+    ]
+  ],
+  "mod8_lifts_per_eligible_class": 4096,
+  "prior_roots": 15,
+  "sixteenth_root": "OPEN"
+}
