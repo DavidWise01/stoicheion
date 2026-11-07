@@ -1,0 +1,18 @@
+{
+  "boundary": "RQT-195",
+  "status": "EXACT_23_ROOT_CERTIFICATE",
+  "previous_root_length": 25,
+  "verified_root_length": 23,
+  "lower_bound": 21,
+  "possible_minimal_length": [
+    21,
+    23
+  ],
+  "success_hurwitz_moves": 308,
+  "followup_accepted_moves": 493356,
+  "followup_search_exhaustive": false,
+  "root_norm": -2,
+  "all_roots_fix_h": true,
+  "full_original_product": true,
+  "global_minimality": "OPEN"
+}
