@@ -1,0 +1,41 @@
+{
+  "boundary": "RQT-193",
+  "status": "FULL_STABILIZER_ROOT_FACTORIZATION_PASS",
+  "original_dimension": 22,
+  "root_count": 25,
+  "all_roots_integral": true,
+  "all_roots_square_minus_two": true,
+  "all_roots_fix_h": true,
+  "all_roots_preserve_G": true,
+  "original_operator_X_equals_product": true,
+  "final_residual": "I_22",
+  "K_witness_coefficients": [
+    0,
+    0,
+    -1,
+    2,
+    1,
+    3,
+    0,
+    0,
+    0,
+    0,
+    0,
+    -1,
+    -2,
+    -1,
+    -2,
+    1,
+    -1,
+    2,
+    -1,
+    4,
+    3
+  ],
+  "source_sha256": {
+    "X": "f23bf0c7897bd89a6d3113cb72b6df9e61fbb1b1feaf6dbf50c2f0079138357c",
+    "G": "4ae9d82c774a950ffc1acaabd70ac8a79c66f4d67051363734d6e01d9ca33ceb"
+  },
+  "minimum_reflection_length": "OPEN",
+  "entire_stabilizer_generated_by_roots": "NOT PROVEN"
+}
