@@ -1,0 +1,17 @@
+{
+  "boundary": "RQT-196",
+  "status": "EXACT_NECESSARY_INDEX_INVARIANT",
+  "det_gram_K": -4,
+  "det_I_minus_X_on_K": 16384,
+  "smith_I_minus_X_on_K": {
+    "ones": 14,
+    "fours": 7
+  },
+  "existing_23_word_root_lattice_index": 16,
+  "necessary_21_word_root_lattice_index": 64,
+  "minimum_candidates": [
+    21,
+    23
+  ],
+  "minimality": "OPEN"
+}
