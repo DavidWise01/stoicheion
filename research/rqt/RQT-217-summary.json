@@ -1,0 +1,29 @@
+{
+  "RQT": 217,
+  "status": "RATIONAL_AND_ALL_PRIME_LOCAL_SOLUBILITY_PASS",
+  "root_flag_preserved": 15,
+  "integer_kernel_rank": 6,
+  "smith_normal_form": [
+    1,
+    1,
+    1,
+    1,
+    2,
+    "156991397203061370861566251934"
+  ],
+  "rational_root_numerator": [
+    0,
+    0,
+    2,
+    0,
+    1,
+    -2
+  ],
+  "rational_root_denominator": 1845,
+  "rational_root_norm": -2,
+  "odd_prime_Zp_solubility": true,
+  "two_adic_Hensel_root_mod_2_to_64": "4727422553192030530",
+  "two_adic_norm_congruence_mod_2_power": 65,
+  "integral_root": "OPEN",
+  "full_21_reflection_word": "OPEN"
+}
