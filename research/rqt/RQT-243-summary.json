@@ -1,0 +1,74 @@
+{
+  "RQT": 243,
+  "status": "EXACT_MOD8_LIFT_CLASSIFICATION_WITH_MOD128_WITNESS",
+  "certified_integral_root_count": 17,
+  "saturated_residual_kernel_rank": 4,
+  "residual_image_index": 2,
+  "Gram_smith": [
+    1,
+    1,
+    2,
+    "4140746287057528486885341995205884503659523818123857612771972419955586"
+  ],
+  "first_root_residues_mod4": 80,
+  "individually_norm_liftable_to_mod16": 64,
+  "first_root_residues_beginning_complete_mod8_flag": 40,
+  "mod4_complete_four_root_flags": 18432,
+  "mod4_flags_liftable_to_mod8": 5760,
+  "mod128_root_columns": [
+    [
+      53,
+      16,
+      90,
+      5
+    ],
+    [
+      73,
+      6,
+      119,
+      57
+    ],
+    [
+      105,
+      77,
+      89,
+      101
+    ],
+    [
+      21,
+      81,
+      119,
+      22
+    ]
+  ],
+  "norm_mod256": 254,
+  "determinant_mod128": 1,
+  "Wall_mod128": [
+    [
+      1,
+      70,
+      90,
+      121
+    ],
+    [
+      0,
+      1,
+      60,
+      98
+    ],
+    [
+      0,
+      0,
+      1,
+      30
+    ],
+    [
+      0,
+      0,
+      0,
+      1
+    ]
+  ],
+  "integral_root18": "OPEN",
+  "full21": "OPEN"
+}
