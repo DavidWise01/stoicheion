@@ -1,0 +1,22 @@
+{
+  "RQT": 222,
+  "status": "EXACT_FULL_SUPPORT_SPECTRAL_CERTIFICATE_PASS",
+  "previous_integral_roots": 15,
+  "rank": 6,
+  "signature_exact": [
+    1,
+    5
+  ],
+  "coercivity_threshold": 10928,
+  "all_six_omitted_coordinate_forms_strictly_negative_definite": true,
+  "proof": "30 exact positive leading principal minors of -F_j-10928 I_5",
+  "required_root_nonzero_coordinates": 6,
+  "positive_eigenvalue_bounds_exclusive": [
+    13,
+    14
+  ],
+  "det_F_minus_13I": "-15740534870424877855390570819",
+  "det_F_minus_14I": "7207415819344600406943933164",
+  "integral_sixteenth_root": "OPEN",
+  "full_21_root_word": "OPEN"
+}
