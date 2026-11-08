@@ -1,0 +1,30 @@
+{
+  "RQT": 236,
+  "status": "EXACT_BRANCH2_FIRST_ROOT_GATE_AND_CONE_FINITE_EXCLUSION",
+  "preserved_roots": 16,
+  "branch": 2,
+  "sixteenth_root_rank6": [
+    -232,
+    -246,
+    223,
+    729,
+    -473,
+    -242
+  ],
+  "remaining_kernel_rank": 5,
+  "eligible_mod4_first_root_classes": 272,
+  "classes_admitting_five_flag_mod4": 152,
+  "classes_obstructed": 120,
+  "positive_sign_orthant": "+ + - - -",
+  "negative_sign_orthant": "- - + + +",
+  "pivot_range": [
+    1,
+    10000
+  ],
+  "exact_candidate_triples": 764141080,
+  "unbounded_final_coordinate": true,
+  "roots_found": 0,
+  "necessary_abs_x0_minimum": 10001,
+  "root17": "OPEN",
+  "full21": "OPEN"
+}
