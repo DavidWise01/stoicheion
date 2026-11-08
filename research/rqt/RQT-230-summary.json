@@ -1,0 +1,45 @@
+{
+  "RQT": 230,
+  "status": "EXACT_SINGLE_ELIGIBLE_TWO_PRIMARY_DISCRIMINANT_CLASS",
+  "prior_roots": 17,
+  "saturated_kernel_rank": 4,
+  "smith_diagonal": [
+    "1",
+    "1",
+    "2",
+    "3577256884236693207232149214617967173770038110"
+  ],
+  "eligible_d2_parity_class": [
+    1,
+    0,
+    0,
+    1
+  ],
+  "order_two_quadratic_values": [
+    "0",
+    "0",
+    "3/2",
+    "1/2"
+  ],
+  "mod4_divisibility_counts": [
+    96,
+    32
+  ],
+  "mod8_divisibility_counts": [
+    768,
+    256
+  ],
+  "mod16_divisibility_counts": [
+    6144,
+    2048
+  ],
+  "Hensel_polynomial_coefficients": [
+    "-1131077395607",
+    "664043305563",
+    "-3048260410782"
+  ],
+  "t_mod_2_64": "18233304022598118383",
+  "norm_congruence_power": 67,
+  "eighteenth_global_integral_root": "OPEN",
+  "full21": "OPEN"
+}
