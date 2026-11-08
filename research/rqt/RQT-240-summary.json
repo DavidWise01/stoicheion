@@ -1,0 +1,14 @@
+{
+  "RQT": 240,
+  "status": "UNIVERSAL_RESIDUAL_RANK_DROP_IDENTITY_PASS",
+  "branch": 2,
+  "certified_explicit_roots": 16,
+  "moving_rank_before": 5,
+  "Gram_determinant": "312669187727137013416789354039323478",
+  "identity": "det(s_r D5-I)=det(D5-I)*(1+q(r)/2)",
+  "rank_after_exact_norm_minus_two_root": 4,
+  "rank_reducing_reflection_exists_by_RQT239": true,
+  "explicit_root17": "OPEN",
+  "downstream_mod4_completion": "OPEN",
+  "full21": "OPEN"
+}
