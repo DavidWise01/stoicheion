@@ -1,0 +1,72 @@
+{
+  "RQT": 245,
+  "status": "ALL_MOD3_UNIMODULAR_WALL_FLAGS_LIFT_3ADICALLY",
+  "existing_integral_roots": 17,
+  "mod3_individual_roots": 36,
+  "mod3_first_roots_extensible": 30,
+  "mod3_first_roots_obstructed": 6,
+  "mod3_complete_flags": 3888,
+  "Jacobian_shape": [
+    10,
+    16
+  ],
+  "Jacobian_rank_for_all_flags": 10,
+  "all_lift_indefinitely_to_Z3": true,
+  "explicit_lift_exponent": 33,
+  "explicit_modulus": "5559060566555523",
+  "determinant_mod3": 1,
+  "mod9_columns": [
+    [
+      0,
+      6,
+      4,
+      3
+    ],
+    [
+      0,
+      1,
+      4,
+      2
+    ],
+    [
+      4,
+      7,
+      1,
+      0
+    ],
+    [
+      1,
+      1,
+      2,
+      2
+    ]
+  ],
+  "mod_3_to_33_columns": [
+    [
+      "4409335503088713",
+      "297261264186375",
+      "3136035136198522",
+      "4401753864650904"
+    ],
+    [
+      "4796289249477399",
+      "3901172202755587",
+      "2745616122359572",
+      "2"
+    ],
+    [
+      "4543534576420870",
+      "5219082228223141",
+      "1",
+      "0"
+    ],
+    [
+      "2276088881148973",
+      "1",
+      "2",
+      "2"
+    ]
+  ],
+  "integral_root18": "OPEN",
+  "complete21": "OPEN"
+}
