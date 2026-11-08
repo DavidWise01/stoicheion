@@ -1,0 +1,67 @@
+{
+  "RQT": 224,
+  "status": "SIXTEENTH_EXACT_INTEGRAL_WALL_ROOT_PASS",
+  "root_reduced_coordinates": [
+    -183,
+    -198,
+    174,
+    572,
+    -368,
+    -188
+  ],
+  "root_ambient_coordinates": [
+    199942,
+    383386,
+    329827,
+    461310,
+    -41442,
+    -52679,
+    -65082,
+    -125589,
+    -153660,
+    -481817,
+    -207896,
+    -25459,
+    18678,
+    -110547,
+    -206072,
+    -66620,
+    69930,
+    182115,
+    99059,
+    -207384,
+    126089,
+    -206587
+  ],
+  "roots_certified": 16,
+  "roots_remaining": 5,
+  "range_positive_pivot": [
+    301,
+    1000
+  ],
+  "quadruples_checked": 82147690,
+  "norm_minus_two_witnesses": 8,
+  "root_divisibility_counts": {
+    "d1": 7,
+    "d2": 1
+  },
+  "wall_column_sixteen": [
+    1020,
+    39487,
+    -14547,
+    212026,
+    -3205259,
+    6441606,
+    519103,
+    126237,
+    350030,
+    -123886,
+    220199,
+    -188410,
+    313329,
+    -821813,
+    322871,
+    1
+  ],
+  "full_21_reflection_product": "OPEN"
+}
