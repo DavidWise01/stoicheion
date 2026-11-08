@@ -1,0 +1,32 @@
+{
+  "RQT": 226,
+  "status": "EXACT_CONE_GLOBAL_ORTHANT_BOUNDED_EXCLUSION_PASS",
+  "roots_preserved": 16,
+  "kernel_rank": 5,
+  "global_sign_orthants": [
+    [
+      "+",
+      "-",
+      "+",
+      "+",
+      "+"
+    ],
+    [
+      "-",
+      "+",
+      "-",
+      "-",
+      "-"
+    ]
+  ],
+  "determinant": "614658467036485410516469524254677624",
+  "t_range_positive": [
+    1,
+    6000
+  ],
+  "candidates_examined": 588300144,
+  "roots_found": 0,
+  "necessary_abs_x0_at_least": 6001,
+  "root17": "OPEN",
+  "full21": "OPEN"
+}
