@@ -1,0 +1,15 @@
+{
+  "RQT": 234,
+  "status": "PREFIX_SPECIFIC_MOD4_OBSTRUCTION_PROVED",
+  "root_prefix_rank": 17,
+  "residual_rank": 4,
+  "residual_Wall_det": 1,
+  "eligible_mod4_root_residues": 64,
+  "ordered_compatible_pairs": 768,
+  "ordered_compatible_triples": 0,
+  "extension_to_21_with_this_prefix": "IMPOSSIBLE",
+  "residual_minimum_reflections_if_factorable": 6,
+  "prefix_continuation_minimum_total_if_factorable": 23,
+  "other_21_reflection_factorizations": "OPEN",
+  "global_minimum_length": "OPEN"
+}
