@@ -1,0 +1,90 @@
+{
+  "RQT": 237,
+  "status": "EXACT_FIRST_ROOT_132_CLASS_GATE_AND_MOD1024_FULL_FLAG",
+  "prefix_roots": 16,
+  "branch": 2,
+  "mod4_norm_candidates": 272,
+  "mod4_completion_obstructed": 120,
+  "mod16_norm_lift_obstructed": 20,
+  "obstruction_sets_disjoint": true,
+  "combined_mod4_first_root_survivors": 132,
+  "modular_flag_modulus": 1024,
+  "modular_norm_modulus": 2048,
+  "modular_flag_det_mod1024": 1,
+  "modular_flag_matrix_rows": [
+    [
+      200,
+      164,
+      880,
+      61,
+      305
+    ],
+    [
+      820,
+      704,
+      501,
+      796,
+      486
+    ],
+    [
+      1004,
+      366,
+      1004,
+      760,
+      1023
+    ],
+    [
+      1020,
+      5,
+      1021,
+      1023,
+      1020
+    ],
+    [
+      1021,
+      1017,
+      1020,
+      2,
+      1
+    ]
+  ],
+  "full_Wall_mod1024": [
+    [
+      1,
+      60,
+      340,
+      384,
+      40
+    ],
+    [
+      0,
+      1,
+      862,
+      819,
+      234
+    ],
+    [
+      0,
+      0,
+      1,
+      143,
+      233
+    ],
+    [
+      0,
+      0,
+      0,
+      1,
+      496
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      1
+    ]
+  ],
+  "integral_root17": "OPEN",
+  "integral_21_word": "OPEN"
+}
