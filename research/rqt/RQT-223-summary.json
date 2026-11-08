@@ -1,0 +1,37 @@
+{
+  "RQT": 223,
+  "status": "EXACT_CONE_ORTHANT_AND_FINITE_EXCLUSION_PASS",
+  "certified_prior_roots": 15,
+  "kernel_rank": 6,
+  "pivot_coordinate_zero_based": 3,
+  "necessary_sign_orthants": [
+    [
+      "-",
+      "-",
+      "+",
+      "+",
+      "-",
+      "-"
+    ],
+    [
+      "+",
+      "+",
+      "-",
+      "-",
+      "+",
+      "+"
+    ]
+  ],
+  "schur_scalar": "78495698601530685430783125967/3114078605308829265576642505",
+  "tested_positive_pivot": [
+    1,
+    300
+  ],
+  "integer_candidates_tested": 13521104,
+  "negative_pivot_covered_by_symmetry": true,
+  "zero_pivot_impossible": true,
+  "root_must_satisfy": "abs(x[3])>=301",
+  "root_found": 0,
+  "global_integral_root": "OPEN",
+  "full_21_word": "OPEN"
+}
