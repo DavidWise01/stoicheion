@@ -1,0 +1,44 @@
+{
+  "RQT": 231,
+  "status": "EXACT_CONE_FINITE_EXCLUSION_TO_50000_PASS",
+  "prior_root_rank": 17,
+  "rank_four_kernel_verified": true,
+  "coordinate_pivot_zero_based": 2,
+  "earlier_range": [
+    1,
+    25000
+  ],
+  "earlier_pair_count": 152127128,
+  "new_segments": [
+    {
+      "range": [
+        25001,
+        35000
+      ],
+      "pairs": 251787368,
+      "roots": 0
+    },
+    {
+      "range": [
+        35001,
+        42000
+      ],
+      "pairs": 284476220,
+      "roots": 0
+    },
+    {
+      "range": [
+        42001,
+        50000
+      ],
+      "pairs": 460237476,
+      "roots": 0
+    }
+  ],
+  "new_candidate_pairs": 996501064,
+  "combined_candidate_pairs": 1148628192,
+  "last_coordinate_unrestricted": true,
+  "necessary_condition": "abs(x[2])>=50001",
+  "global_root18": "OPEN",
+  "full_21_word": "OPEN"
+}
