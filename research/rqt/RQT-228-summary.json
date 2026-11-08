@@ -1,0 +1,40 @@
+{
+  "RQT": 228,
+  "status": "SATURATED_RANK_FOUR_KERNEL_BOUNDED_NONFINDING",
+  "certified_prior_roots": 17,
+  "constraint_row": [
+    -1622481684,
+    -2177526381,
+    -1405150251,
+    3589101224,
+    420794413
+  ],
+  "constraint_gcd": 1,
+  "saturated_kernel_rank": 4,
+  "exact_gram_det": "-7154513768473386414464298429235934347540076220",
+  "signature": [
+    1,
+    3
+  ],
+  "full_support_requirement": 4,
+  "mod4": [
+    128,
+    256
+  ],
+  "mod8": [
+    1024,
+    4096
+  ],
+  "mod16": [
+    8192,
+    65536
+  ],
+  "bounded_first_three": [
+    -100,
+    100
+  ],
+  "fourth_unbounded": true,
+  "cases": 8120601,
+  "roots_found": 0,
+  "eighteenth_root": "OPEN"
+}
