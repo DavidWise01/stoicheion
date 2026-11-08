@@ -1,0 +1,36 @@
+{
+  "RQT": 232,
+  "status": "EXACT_PRIMITIVE_FLAG_AND_RANK_FOUR_RESIDUAL_PASS",
+  "certified_roots": 17,
+  "primitive_root_flag_smith_diagonal": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+  ],
+  "residual_rank_D_minus_I": 4,
+  "residual_det": 1,
+  "residual_fixed_dim_K": 17,
+  "quartic_coefficients": [
+    "1",
+    "-1788747456455898654291114110156498819571267856",
+    "-3577018855561589105882070208922936708397540510",
+    "-1788747456455898654291114110156498819571267856",
+    "1"
+  ],
+  "integral_four_reflection_completion": "OPEN",
+  "full21": "OPEN"
+}
