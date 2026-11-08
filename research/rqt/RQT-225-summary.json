@@ -1,0 +1,32 @@
+{
+  "RQT": 225,
+  "status": "EXACT_RANK_FIVE_KERNEL_FULL_SUPPORT_AND_BOUNDED_NONFINDING",
+  "wall_orientation": "T16.T*H.T",
+  "constraint_row": [
+    933123,
+    -510896,
+    161471,
+    -25969,
+    -571236,
+    818364
+  ],
+  "constraint_gcd": 1,
+  "integer_kernel_rank": 5,
+  "kernel_gram_determinant": "614658467036485410516469524254677624",
+  "signature_exact": [
+    1,
+    4
+  ],
+  "coordinate_support_required": 5,
+  "coercivity_threshold": 88000,
+  "first_four_coordinate_range": [
+    -30,
+    30
+  ],
+  "fifth_coordinate_unbounded": true,
+  "candidates_evaluated": 13845841,
+  "roots_found": 0,
+  "mod4_compatible": 512,
+  "mod8_compatible": 9216,
+  "seventeenth_root": "OPEN"
+}
