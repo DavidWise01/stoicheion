@@ -1,0 +1,23 @@
+{
+  "RQT": 242,
+  "status": "RANK_FOUR_SATURATED_KERNEL_AND_MOD4_COMPLETION_PASS",
+  "root_count": 17,
+  "kernel_rank": 4,
+  "Gram_det": "-8281492574115056973770683990411769007319047636247715225543944839911172",
+  "Wall_det": 1,
+  "residual_rank": 4,
+  "residual_image_index": 2,
+  "residual_image_smith": [
+    1,
+    1,
+    1,
+    2
+  ],
+  "first_residues": 80,
+  "pairs": 1504,
+  "triples": 9216,
+  "complete_four_flags": 18432,
+  "unimodular_complete_flags": 18432,
+  "root18": "OPEN",
+  "full21": "OPEN"
+}
