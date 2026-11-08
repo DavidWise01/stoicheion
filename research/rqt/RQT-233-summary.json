@@ -1,0 +1,41 @@
+{
+  "RQT": 233,
+  "status": "EXACT_INTEGRAL_IMAGE_EQUALS_WALL_KERNEL",
+  "root_flag_rank": 17,
+  "residual_rank": 4,
+  "smith_residual_minus_identity": [
+    1,
+    1,
+    1,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "smith_image_coordinates": [
+    1,
+    1,
+    1,
+    1
+  ],
+  "integral_image_equals_saturated_Wall_kernel": true,
+  "quartic_at_plus_one": "-7154513768473386414464298429235934347540076220",
+  "quartic_at_minus_one": "476057350208202700158011390060930744995204",
+  "sqrt_quartic_at_minus_one": "689969093661594888802",
+  "integral_root18": "OPEN",
+  "full21": "OPEN"
+}
