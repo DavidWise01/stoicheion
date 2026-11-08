@@ -1,0 +1,48 @@
+{
+  "RQT": 244,
+  "status": "GLOBAL_RANK4_CONE_SIGN_AND_EXACT_FINITE_SEARCH_PASS",
+  "preserved_explicit_roots": 17,
+  "kernel_rank": 4,
+  "global_sign_patterns": [
+    "++--",
+    "--++"
+  ],
+  "order_two_parities_with_quadratic_mod8": [
+    [
+      "0000",
+      0
+    ],
+    [
+      "0100",
+      4
+    ],
+    [
+      "1011",
+      6
+    ],
+    [
+      "1111",
+      6
+    ]
+  ],
+  "mod4_first_root_survivors": 40,
+  "classes_pairing_divisibility_one": 24,
+  "classes_pairing_divisibility_two": 16,
+  "local_first_root_mod8": [
+    0,
+    1,
+    1,
+    5
+  ],
+  "Hensel_2adic_parameter_mod_2_256": "93878330334900477488557551447004581630314366809978929771196499707722623893639",
+  "norm_plus2_congruence_power": 260,
+  "positive_pivot_range": [
+    1,
+    10000
+  ],
+  "exact_integer_pairs_tested": 15240808,
+  "roots_found": 0,
+  "necessary_abs_x0_minimum": 10001,
+  "global_integral_eighteenth_root": "OPEN",
+  "full21": "OPEN"
+}
