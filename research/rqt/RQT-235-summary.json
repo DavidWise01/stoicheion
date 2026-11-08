@@ -1,0 +1,104 @@
+{
+  "RQT": 235,
+  "status": "EIGHT_BRANCH_MOD4_SCREEN_PASS",
+  "fixed_prefix_roots": 15,
+  "alternate_root16_candidates": 8,
+  "rank_each_residual": 5,
+  "image_smith_each": [
+    1,
+    1,
+    1,
+    1,
+    1
+  ],
+  "branch_residue_counts": [
+    288,
+    192,
+    272,
+    272,
+    272,
+    192,
+    256,
+    272
+  ],
+  "ordered_pair_counts": [
+    19456,
+    8192,
+    17920,
+    17920,
+    17920,
+    8192,
+    15360,
+    18432
+  ],
+  "ordered_triple_counts": [
+    311296,
+    65536,
+    281600,
+    281600,
+    281600,
+    65536,
+    172032,
+    313344
+  ],
+  "mod4_pass_branches": [
+    0,
+    2,
+    3,
+    4,
+    7
+  ],
+  "mod4_obstructed_branches": [
+    1,
+    5,
+    6
+  ],
+  "all_pass_branches_only_necessary_condition": true,
+  "branch_2_sixteenth_root_rank6": [
+    -232,
+    -246,
+    223,
+    729,
+    -473,
+    -242
+  ],
+  "branch_2_rank5_Gram_det": "312669187727137013416789354039323478",
+  "branch_2_mod4_flag_columns": [
+    [
+      0,
+      0,
+      0,
+      0,
+      1
+    ],
+    [
+      0,
+      0,
+      2,
+      1,
+      1
+    ],
+    [
+      0,
+      1,
+      0,
+      1,
+      0
+    ],
+    [
+      1,
+      0,
+      0,
+      3,
+      2
+    ],
+    [
+      1,
+      2,
+      3,
+      0,
+      1
+    ]
+  ],
+  "integral_21_reflection_word": "OPEN"
+}
