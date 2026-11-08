@@ -1,0 +1,25 @@
+{
+  "RQT": 229,
+  "status": "EXACT_RANK_FOUR_CONE_ORTHANT_AND_FINITE_EXCLUSION",
+  "prior_roots": 17,
+  "integer_kernel_rank": 4,
+  "signature": [
+    1,
+    3
+  ],
+  "pivot_zero_based": 2,
+  "global_orthants": [
+    "++++",
+    "----"
+  ],
+  "positive_slices": [
+    1,
+    25000
+  ],
+  "pairs_examined": 152127128,
+  "last_coordinate_unbounded": true,
+  "roots_found": 0,
+  "necessary_bound": "abs(x[2])>=25001",
+  "root18": "OPEN",
+  "full21": "OPEN"
+}
