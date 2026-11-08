@@ -1,0 +1,32 @@
+{
+  "RQT": 239,
+  "status": "GLOBAL_NORM_MINUS_TWO_ROOT_EXISTENCE_PROVED_EXPLICIT_WITNESS_OPEN",
+  "branch": 2,
+  "previous_explicit_integral_roots": 16,
+  "signature": [
+    1,
+    4
+  ],
+  "determinant": "312669187727137013416789354039323478",
+  "distinct_prime_factors": [
+    "2",
+    "139801",
+    "7915189",
+    "646956613",
+    "218377739361227"
+  ],
+  "squarefree": true,
+  "primitive_isotropic_exists_by_Meyer": true,
+  "primitive_isotropic_divisibility_one": true,
+  "unimodular_hyperbolic_plane_summand_exists": true,
+  "norm_minus2_integral_vector_exists": true,
+  "coordinates": "OPEN",
+  "completion_to_21": "OPEN",
+  "reduced_basis_det": -1,
+  "finite_reduced_box": [
+    -40,
+    40
+  ],
+  "finite_assignments": 43046721,
+  "finite_hits": 0
+}
