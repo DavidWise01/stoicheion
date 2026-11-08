@@ -1,0 +1,46 @@
+{
+  "RQT": 246,
+  "status": "EXACT_GLOBAL_RATIONAL_FOUR_REFLECTION_FACTORIZATION",
+  "existing_explicit_integral_roots": 17,
+  "residual_moving_rank": 4,
+  "rational_factorization_reflections": 4,
+  "ranks": [
+    4,
+    3,
+    2,
+    1,
+    0
+  ],
+  "probe_vectors": [
+    [
+      0,
+      0,
+      -1,
+      1
+    ],
+    [
+      -1,
+      0,
+      0,
+      1
+    ],
+    [
+      1,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      1,
+      0,
+      0
+    ]
+  ],
+  "rational_product_equals_D4": true,
+  "each_reflection_isometric_involutive": true,
+  "product_of_norms_square_root": "33125970296460227895082735961647076029276190544990860902175779359644688",
+  "det_I_plus_D4_square_root": "486727367823340359819958938930020",
+  "integral_root18": "OPEN",
+  "integral_full21": "OPEN"
+}
