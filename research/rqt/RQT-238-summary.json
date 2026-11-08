@@ -1,0 +1,35 @@
+{
+  "RQT": 238,
+  "status": "EXACT_CYCLIC_DISCRIMINANT_PARITY_AND_2ADIC_CERTIFICATE",
+  "certified_roots": 16,
+  "discriminant_order": "312669187727137013416789354039323478",
+  "Smith": [
+    1,
+    1,
+    1,
+    1,
+    "312669187727137013416789354039323478"
+  ],
+  "two_primary": "Z/2",
+  "unique_divisibility2_parity": [
+    0,
+    0,
+    0,
+    0,
+    1
+  ],
+  "q_half_mod2": "3/2",
+  "max_d2_roots_in_unimodular_flag": 1,
+  "first_root_classes_d1": 120,
+  "first_root_classes_d2": 12,
+  "first_root_classes_total": 132,
+  "hensel_polynomial": [
+    "-50401690",
+    "-162145929",
+    "-165967762"
+  ],
+  "t_mod_2_128": "216126377552887896659684962905481850670",
+  "norm_plus2_congruence_power": 131,
+  "global_integral_seventeenth_root": "OPEN",
+  "full_21_reflections": "OPEN"
+}
