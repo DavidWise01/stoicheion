@@ -1,0 +1,34 @@
+{
+  "RQT": 256,
+  "status": "EXACT_FIRST_REFLECTION_ORDER_REDUCTION_MOD2_PASS",
+  "prefix_explicit_roots": 17,
+  "complete_binary_flags": 36,
+  "first_root_parities_norm_compatible": 8,
+  "first_root_parities_eligible": 5,
+  "excluded_parities": [
+    "0011",
+    "1010",
+    "1101"
+  ],
+  "d1_order_reducing_parities": [
+    "0111",
+    "1001",
+    "1110"
+  ],
+  "d2_order_preserving_parities": [
+    "1011",
+    "1111"
+  ],
+  "counts_by_first_root_parity_mod8_lift": {
+    "1001": 960,
+    "1011": 1440,
+    "1110": 960,
+    "1111": 1440,
+    "0111": 960
+  },
+  "total_complete_mod4_flags_liftable_to_mod8": 5760,
+  "viable_first_root_residues_mod4": 40,
+  "per_viable_parity_mod4_first_root_residues": 8,
+  "integral_eighteenth_root": "OPEN",
+  "full21": "OPEN"
+}
