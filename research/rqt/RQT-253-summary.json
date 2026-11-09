@@ -1,0 +1,18 @@
+{
+  "RQT": 253,
+  "status": "INFINITE_DIVISIBILITY_ONE_INTEGRAL_ROOT_ORBIT_PROVED_EXISTENTIALLY",
+  "prefix_integral_roots": 17,
+  "rank_four_det": "-8281492574115056973770683990411769007319047636247715225543944839911172",
+  "binary_complement_det": "2070373143528764243442670997602942251829761909061928806385986209977793",
+  "integral_lattice_split": "U+N2",
+  "infinite_root_parameters": "Z²",
+  "root_formula": "r_mn=u-w-z+(z²/2)u; z=m e1+n e2",
+  "norm": -2,
+  "primitive": true,
+  "divisibility": 1,
+  "Eichler_group": "Z²",
+  "residual_rank_reduction": "4→3",
+  "original_coordinate_splitting": "OPEN",
+  "root18_explicit": "OPEN",
+  "four_root_integral_completion": "OPEN"
+}
