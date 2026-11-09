@@ -1,0 +1,26 @@
+{
+  "RQT": 248,
+  "status": "EXACT_TWO_DIVISIBILITY_TWO_ROOTS_NECESSARY_FOR_FOUR_REFLECTION_COMPLETION",
+  "prefix_explicit_roots": 17,
+  "root_residues_mod4": 80,
+  "d2_residues": 32,
+  "complete_mod4_flags": 18432,
+  "flags_with_exactly_two_d2": 18432,
+  "forced_d2_parities": [
+    [
+      1,
+      0,
+      1,
+      1
+    ],
+    [
+      1,
+      1,
+      1,
+      1
+    ]
+  ],
+  "each_two_d2_position_pattern": 3072,
+  "explicit_root18": "OPEN",
+  "full21": "OPEN"
+}
