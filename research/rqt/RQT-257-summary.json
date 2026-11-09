@@ -1,0 +1,22 @@
+{
+  "RQT": 257,
+  "status": "AUTOMATIC_PRODUCT_THEOREM_EXACT_PASS",
+  "existing_explicit_roots": 17,
+  "remaining_reflections": 4,
+  "wall_unimodular": true,
+  "automatic_unimodularity": "det(V)=±1",
+  "exact_product_identity": "s_r18*s_r19*s_r20*s_r21=D4",
+  "required_equations": "four norms -2 and six lower Wall zero",
+  "symbolic_dimensions": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "mod4_flags_tested": 18432,
+  "mod4_product_mismatches": 0,
+  "high_precision_product_modulus_exponent": 256,
+  "high_precision_norm_modulus_exponent": 257,
+  "root18_integral": "OPEN",
+  "complete_21_integral": "OPEN"
+}
