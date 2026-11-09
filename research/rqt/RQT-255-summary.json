@@ -1,0 +1,67 @@
+{
+  "RQT": 255,
+  "status": "EXACT_ORDER_THREE_BINARY_RESIDUAL_AND_36_REFLECTION_PRODUCT_IDENTITIES",
+  "certified_integral_prefix_roots": 17,
+  "D4_mod2": [
+    [
+      0,
+      0,
+      0,
+      1
+    ],
+    [
+      1,
+      1,
+      1,
+      0
+    ],
+    [
+      1,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      1,
+      0
+    ]
+  ],
+  "D4_mod2_order": 3,
+  "binary_gram_radical_dimension": 2,
+  "radical_fixed_pointwise": true,
+  "quotient_action": [
+    [
+      0,
+      1
+    ],
+    [
+      1,
+      1
+    ]
+  ],
+  "quotient_order": 3,
+  "eligible_binary_roots": 8,
+  "divisibility_two_parities": [
+    [
+      1,
+      0,
+      1,
+      1
+    ],
+    [
+      1,
+      1,
+      1,
+      1
+    ]
+  ],
+  "binary_completion_flags": 36,
+  "radical_position_choices": 6,
+  "quotient_nonradical_ordered_pairs": 3,
+  "radical_order_choices": 2,
+  "all_36_products_equal_D_mod2": true,
+  "root18_integral_explicit": "OPEN",
+  "complete21": "OPEN"
+}
