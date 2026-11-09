@@ -1,0 +1,24 @@
+{
+  "RQT": 254,
+  "status": "EXACT_SECOND_UNIMODULAR_HEIGHT_BOUND_AND_ISOTROPIC_EXCLUSION",
+  "preserved_integral_roots": 17,
+  "transform_det": -1,
+  "first_new_coordinate_old_basis": [
+    -24,
+    -22,
+    -17,
+    -17
+  ],
+  "slices": [
+    1,
+    1000
+  ],
+  "candidate_pairs_for_each_norm": 33614572,
+  "target_norm_minus2_solutions": 0,
+  "target_norm0_solutions": 0,
+  "new_necessary_bound": "abs(24*x0+22*x1+17*x2+17*x3)>=1001",
+  "previous_bound": "abs(x0)>=10001",
+  "last_coordinate_unbounded": true,
+  "explicit_root18": "OPEN",
+  "full21": "OPEN"
+}
