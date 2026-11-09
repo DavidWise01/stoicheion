@@ -1,0 +1,28 @@
+{
+  "RQT": 250,
+  "status": "EXACT_BINARY_BACKBONE_UNIFORM_LIFT_INVARIANT",
+  "explicit_integral_roots_preserved": 17,
+  "rank_four_mod2_candidate_roots": 8,
+  "ordered_complete_binary_flags": 36,
+  "forced_d2_parities": [
+    [
+      1,
+      0,
+      1,
+      1
+    ],
+    [
+      1,
+      1,
+      1,
+      1
+    ]
+  ],
+  "mod4_eligible_residues": 80,
+  "complete_mod4_flags": 18432,
+  "uniform_mod4_lifts_per_binary_flag": 512,
+  "d2_position_patterns": 6,
+  "flags_per_position_pattern": 3072,
+  "explicit_integral_root18": "OPEN",
+  "complete21": "OPEN"
+}
