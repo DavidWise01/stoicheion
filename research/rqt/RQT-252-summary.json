@@ -1,0 +1,19 @@
+{
+  "RQT": 252,
+  "status": "ALL_36_BINARY_BACKBONES_HAVE_MOD64_WITNESSES",
+  "integral_root_prefix": 17,
+  "binary_backbones": 36,
+  "binary_backbones_certified_mod64": 36,
+  "modular_wall_modulus": 64,
+  "modular_norm_modulus": 128,
+  "unique_witness_per_backbone": true,
+  "all_witness_determinants_odd": true,
+  "search_seed": 252032,
+  "search_paths": 18789,
+  "maximum_trials_for_one_backbone": 1874,
+  "complete_mod64_enumeration": false,
+  "partial_mod128_backbones_found": 35,
+  "remaining_mod128_backbone": "UNRESOLVED",
+  "explicit_integral_root18": "OPEN",
+  "full21": "OPEN"
+}
