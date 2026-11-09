@@ -1,0 +1,35 @@
+{
+  "RQT": 249,
+  "status": "FOUR_COLUMN_WALL_FLAG_MOD_2_POWER_256_PASS",
+  "existing_explicit_integral_roots": 17,
+  "residual_rank": 4,
+  "modulus_exponent": 256,
+  "norm_congruence_exponent": 257,
+  "all_4_norm_congruences": true,
+  "all_6_lower_wall_congruences": true,
+  "diagonal_wall_units": true,
+  "odd_determinant": true,
+  "divisibility_two_columns_one_based": [
+    2,
+    3
+  ],
+  "forced_divisibility_two_parities": [
+    [
+      1,
+      0,
+      1,
+      1
+    ],
+    [
+      1,
+      1,
+      1,
+      1
+    ]
+  ],
+  "deterministic_seed": 249,
+  "lift_trials": 1969,
+  "deterministic_replay_identical": true,
+  "global_integral_eighteenth_root": "OPEN",
+  "complete21": "OPEN"
+}
