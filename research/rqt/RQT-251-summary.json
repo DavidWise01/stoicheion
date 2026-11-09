@@ -1,0 +1,46 @@
+{
+  "RQT": 251,
+  "status": "UNIFORM_BINARY_BACKBONE_LIFT_MOD8_EXACT_PASS",
+  "certified_integral_roots": 17,
+  "binary_complete_flags": 36,
+  "mod4_flags_per_binary": 512,
+  "liftable_mod4_flags_per_binary": 160,
+  "mod4_liftable_flags_total": 5760,
+  "equations": 10,
+  "binary_variables": 16,
+  "rank_all_consistent_systems": 7,
+  "mod8_lifts_per_consistent_mod4": 512,
+  "complete_mod8_flags": 2949120,
+  "complete_mod8_flags_per_binary": 81920,
+  "d2_position_patterns": 6,
+  "mod8_flags_per_d2_position": 491520,
+  "first_root_mod4_classes": 40,
+  "explicit_mod8_columns": [
+    [
+      4,
+      5,
+      5,
+      1
+    ],
+    [
+      1,
+      4,
+      6,
+      1
+    ],
+    [
+      5,
+      0,
+      3,
+      3
+    ],
+    [
+      1,
+      1,
+      1,
+      3
+    ]
+  ],
+  "integral_root18": "OPEN",
+  "full21": "OPEN"
+}
